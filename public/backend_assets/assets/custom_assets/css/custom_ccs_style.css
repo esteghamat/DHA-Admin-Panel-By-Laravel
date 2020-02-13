@@ -1,0 +1,57 @@
+/* Preview */
+
+.error_msg {
+    color: orangered;
+}
+
+.header_tr {
+    font-size: 1.0em;
+    color: black;
+    background-color: bisque;
+    /* font-family: 'Open Sans', sans-serif; */
+}
+
+.header_body_tr {
+  color: black;
+  background-color:#D1D6DD;
+  /* font-family: 'Open Sans', sans-serif; */
+}
+
+.gallery {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.close-icon {
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+    top: -10px;
+    padding: 5px 8px;
+}
+
+.form-image-upload {
+    background: #e8e8e8 none repeat scroll 0 0;
+    padding: 15px;
+}
+
+.image-title {
+    padding: 0.4rem;
+    background-color: #eeeeee;
+    border: 2px solid #dee2e6;
+    border-radius: 2px;
+}
+
+.form_inputs {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.transparent_button {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
