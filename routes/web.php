@@ -34,6 +34,7 @@ Route::get('/work-samples', 'SiteController@worksamples');
 Route::get('/blog', 'SiteController@blog');
 Route::get('/blog/blogdetails/{blog_slug}', 'SiteController@blogdetails');
 Route::get('/contact', 'SiteController@contact');
+Route::post('/contact/send_email', 'SiteController@contactus_savemessage_sendemail');
 
 // ********************************  Admin ********************************
 Route::match(['get' , 'post'] , '/admin', 'AdminController@login');
@@ -44,6 +45,17 @@ Route::get('/admin/settings', 'AdminController@settings');
 Route::get('/admin/check_password', 'AdminController@check_password');
 Route::post('/admin/update_password', 'AdminController@update_password');
 Route::get('/admin/load_contenttype', 'AdminController@loadContenttype');
+
+// ******************************** Config Types ********************************
+Route::get('/admin/configtype', 'ConfigtypeController@indexConfigTypes');
+Route::match(['get','post'] , '/admin/add_configtype', 'ConfigtypeController@addConfigType');
+Route::get('/admin/edit_row_configtype{id}' , 'ConfigtypeController@editRowConfigType');
+Route::post('/admin/update_configtype', 'ConfigtypeController@updateConfigType');
+Route::post('/admin/delete_possibility_configtype', 'ConfigtypeController@deletePassibilityConfigType');
+Route::post('/admin/delete_configtype', 'ConfigtypeController@deleteConfigType');
+
+// ******************************** Configs ********************************
+Route::get('/admin/configs', 'ConfigsController@indexConfigs');
 
 // ********************************  Marka ********************************
 Route::match(['get'] , '/marka/{marka_slug}' , 'MarkaController@showMarka');

@@ -18,6 +18,13 @@
                       <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('contenthead') }}" aria-expanded="false" id="sidebar_menu_contenthead"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">Site ana içerikleri</span></a></li>
                       <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('contentitem') }}" aria-expanded="false" id="sidebar_menu_contentitem"><i class="mdi mdi-view-list"></i><span class="hide-menu">Site öğeleri içeriği</span></a></li>
 
+                      <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-cog"></i><span class="hide-menu">Sistem ayarları </span></a>
+                          <ul aria-expanded="false" class="collapse  first-level">
+                              <li class="sidebar-item"><a href="{{ url('admin/configtype') }}" class="sidebar-link"><i class="fas fa-qrcode"></i><span class="hide-menu"> Ayar türleri </span></a></li>
+                              <li class="sidebar-item"><a href="{{ url('admin/configs') }}" class="sidebar-link"><i class="fas fa-qrcode"></i><span class="hide-menu"> Ayarlar </span></a></li>
+                          </ul>
+                      </li>
+
                       <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-buttons.html" aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">Buttons</span></a></li>
                       <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Icons </span></a>
                           <ul aria-expanded="false" class="collapse  first-level">

@@ -7,6 +7,9 @@ use App\Portfolio;
 use App\Filter;
 use App\Site_Content_Head;
 use App\Site_Content_Item;
+use App\Site_Contactus_Message;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
 
 class SiteController extends Controller
 {
@@ -140,6 +143,53 @@ class SiteController extends Controller
 
   }
   
+  public function contactus_savemessage_sendemail(Request $request)
+  {
+    if($request->isMethod('get'))
+    {
+        return view('pages.contact');
+    }
+
+    $this->validate($request, 
+    [
+      'input_contactus_name' => 'required',
+      'input_contactus_email' => 'required|email',
+      'input_contactus_message_subject' => 'required',
+      'input_contactus_message_text' => 'required',
+    ],
+    [
+      'input_contactus_name.required' => 'lütfen adı girin!! ',
+      'input_contactus_email.required' => 'lütfen e-posta girin!! ',
+      'input_contactus_email.email' => 'lütfen doğru bir e-posta adresi girin!! ',
+      'input_contactus_message_subject.required' => 'lütfen mesaj için bir başlık girin!! ',
+      'input_contactus_message_text.required' => 'lütfen mesaj girin!! ',
+    ]);
+
+    $site_contactus_message = new Site_Contactus_Message();
+
+    $site_contactus_message->contactus_name = $request['input_contactus_name'];
+    $site_contactus_message->contactus_email = $request['input_contactus_email'];
+    $site_contactus_message->contactus_phonenumber = $request['input_contactus_phonenumber'];
+    $site_contactus_message->contactus_message_subject = $request['input_contactus_message_subject'];
+    $site_contactus_message->contactus_message_text = $request['input_contactus_message_text'];
+
+    $site_contactus_message->save(); 
+    
+    $data = array(
+      'input_contactus_name' => $request['input_contactus_name'],
+      'input_contactus_email' => $request['input_contactus_email'],
+      'input_contactus_phonenumber' => $request['input_contactus_phonenumber'],
+      'input_contactus_message_subject' => $request['input_contactus_message_subject'],
+      'input_contactus_message_text' => $request['input_contactus_message_text'],
+    );
+    
+    Mail::to('sm_iransoftware@yahoo.com')->send(new SendMail($data));
+
+    return back()->with('success' , 'Bizimle iletişime geçtiğiniz için teşekkürler.');
+    // return redirect('/contact')->with( 'flash_message_success' , 'mesajınız "' . $request['input_contactus_message_subject'].'" başarıyla gönderildi.');;
+
+  }
+
   public function blogdetails($blog_slug)
   {
 
