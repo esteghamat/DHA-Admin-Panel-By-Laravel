@@ -1,0 +1,13 @@
+
+php artisan cache:clear
+php artisan route:clear
+php artisan config:clear
+php artisan view:clear 
+php artisan config:cache
+
+
+
+get clone 
+(https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) : 
+
+$ git clone https://github.com/esteghamat/DHA-Admin-Panel-By-Laravel DHASite

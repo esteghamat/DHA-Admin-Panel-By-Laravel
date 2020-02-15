@@ -14,7 +14,7 @@
                 <div class="footer-bottom-left footer-bottom-items">
                     <div><i class="fas fa-map-marker-alt"></i></div>
                     <div>
-                        <p>Kosuyolu Mahallesi Ali Nazime Sk. <br>
+                        <p class="fs-sm">Kosuyolu Mahallesi Ali Nazime Sk. <br>
                             No 5/A Kadıkoy/İstanbul</p>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="footer-bottom-right footer-bottom-items">
                     <div class="foot-item1">
-                        <p>2020 © FikirBuzz Agency Tum Hakları Saklıdır.</p>
+                        <p class="fs-xs">2020 © FikirBuzz Agency Tum Hakları Saklıdır.</p>
                     </div>
                     <div class="foot-item2">
                         <li><a href="">KVKK</a></li>

@@ -37,7 +37,7 @@
                             medya hesaplarınızı görünür yapıyoruz. DHA; doğru tedaviyle
                             markanızı iyileştir, çözüm üretir, yaratıcı fikirler geliştirir.
                             Siz muayenenize devam edin gerisini biz hallederiz! </p> -->
-                        <P>
+                        <P class="fs-sm">
                           <?php 
                              echo(nl2br($contentheads_anasayfa->contenthead_title_description));
                           ?>  
@@ -72,7 +72,7 @@
                     DHA; doğru tedaviyle markanızı iyileştir, çözüm üretir,
                     yaratıcı fikirler geliştirir. Siz dünyayı iyileştirmeye devam edin gerisini biz hallederiz! 
                 </p> -->
-                <p>
+                <p class="fs-sm">
                   {{ $contentheads_biz_kimiz->contenthead_title_description }}
                 </p>
             </div>
@@ -98,7 +98,7 @@
                             medya hesabınızı analiz ediyor, ihtiyaca
                             uygun düzenliyor, büyütüyor ve raporluyoruz.
                         </p> -->
-                        <p>
+                        <p class="fs-sm">
                             {{ $contentitem->contentitem_title_description }}
                         </p>
                     </div>
@@ -165,7 +165,7 @@
                         reiciendis in nihil magni est ad corporis sapiente consectetur ea!amet consectetur, adipisicing
                         elit. Est, aut?
                     </p> -->
-                    <p>
+                    <p class="fs-sm">
                       <?php 
                       echo(nl2br($contentheads_islerimiz->contenthead_title_description));
                       ?>  
@@ -408,10 +408,10 @@
                   $contentheads_blog = $contentheads_blog->first();
                 ?>
                 <div>
-                    <h1><span>{{ $contentheads_blog->contenthead_title }}</span></h1>
+                    <h1><span>{{ isset($contentheads_blog->contenthead_title) ? $contentheads_blog->contenthead_title : 'Blog' }}</span></h1>
                 </div>
                 <div>
-                    <h6>{{ $contentheads_blog->contenthead_title_description }}</h6>
+                    <h6>{{ isset($contentheads_blog->contenthead_title_description) ? $contentheads_blog->contenthead_title_description : '' }}</h6>
                 </div>
             </div>
             <div class="blog-slider">
@@ -431,12 +431,12 @@
                                 <img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt="">
                                 <div class="swipe-content">
                                     <div class="date">
-                                        <h5>{{ $contentitem->contentitem_title }}</h5>
+                                        <h5>{{ isset($contentitem->contentitem_title) ? $contentitem->contentitem_title : '' }}</h5>
                                     </div>
                                     <div>
                                         <p>
                                         <?php  
-                                            $blog_text = $contentitem->contentitem_title_description;
+                                            if(isset($contentitem->contentitem_title_description)) { $blog_text = $contentitem->contentitem_title_description; } else  { $blog_text = '';};
                                             $blog_text = substr($blog_text,0,100);
                                         ?>
                                         {{ $blog_text }}
