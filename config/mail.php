@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'mohammad.esteghamat@fikirbuzz.com'),
-        'name' => env('MAIL_FROM_NAME', 'Mohammad'),
+        'name' => env('MAIL_FROM_NAME', 'fikirbuzz_noreply'),
     ],
 
     /*

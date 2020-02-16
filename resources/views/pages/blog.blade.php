@@ -13,6 +13,7 @@
                     </p>
                     <br>
                     <a href="/blog/blogdetails/{{ $contentitem->contentitem_slug }}">Devamını Oku   <i class="fas fa-long-arrow-alt-right fa-sm"></i></a>
+                    {{-- <a href="{{ url('blog/blogdetails/$contentitem->contentitem_slug') }}">Devamını Oku   <i class="fas fa-long-arrow-alt-right fa-sm"></i></a> --}}
                 </div>
             </div>
         @endforeach    

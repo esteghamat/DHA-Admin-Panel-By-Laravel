@@ -17,3 +17,7 @@ after changes :
 1- $ git add .
 2- $ git commit -m "Commit 3 - from home - first. "
 3- git push -u origin master
+
+
+fikirbuzz.noreply@gmail.com
+fikirbuzz2020**

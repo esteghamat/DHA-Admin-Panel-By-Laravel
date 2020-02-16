@@ -32,7 +32,7 @@ class SendMail extends Mailable
     public function build()
     {
         // return $this->view('view.name');
-        return $this->from('mohammad.esteghamat@fikirbuzz.com')
+        return $this->from('fikirbuzz.noreply@gmail.com')
                     ->subject('Bu kullanıcının "Bize Ulaşın" formundaki bir mesajdır.')
                     ->view('admin.email.dynamic_email_template')
                     ->with('data' , $this->data);
