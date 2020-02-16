@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => env('mohammad.esteghamat@fikirbuzz.com'),
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => env('mohammed2020**'),
 
     /*
     |--------------------------------------------------------------------------
