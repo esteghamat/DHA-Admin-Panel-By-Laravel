@@ -31,7 +31,7 @@
                 <div><<img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_logo_image_name	}}" alt=""></div>
                 <div><h5>{{ $contentitem->contentitem_title }}</h5></div>
                 <div>
-                  <p>
+                  <p class="fs-sm">
                     <?php 
                       echo(nl2br($contentitem->contentitem_title_description));
                     ?>  

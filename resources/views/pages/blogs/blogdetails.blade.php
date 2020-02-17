@@ -13,6 +13,7 @@
     $contentitems_selected_blog = $contentitems_selected_blog->first();
 ?>
 
+
 <div class="blog-head-image"><img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitems_selected_blog->contentitem_image_name	}}" alt=""></div>
 
         <section class="blog-content">
@@ -34,7 +35,7 @@
                 @foreach($contentitems as $contentitem)  
                     <div>
                         <div><img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt=""></div>
-                        <div><a href="">{{ $contentitem->contentitem_title }}</a></div>
+                        <div><a href="/blog/blogdetails/{{ $contentitem->contentitem_slug }}">{{ $contentitem->contentitem_title }}</a></div>
                     </div>
                 @endforeach
                 <div class="right-sm">

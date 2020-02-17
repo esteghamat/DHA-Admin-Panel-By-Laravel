@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'fikirbuzz.com'), 
+    'host' => env('MAIL_HOST', 'fikirbuzz.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'mohammad.esteghamat@fikirbuzz.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'name' => env('MAIL_FROM_NAME', 'fikirbuzz_noreply'),
     ],
 
     /*
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => env('mohammad.esteghamat@fikirbuzz.com'),
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => env('mohammed2020**'),
 
     /*
     |--------------------------------------------------------------------------

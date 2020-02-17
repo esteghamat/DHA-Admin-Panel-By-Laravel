@@ -229,9 +229,11 @@ $(document).ready(function() {
         });
         if (possibility_array.length == 0) //
         {
+            // alert('possibility_array.length == ' + '1');
             final_delete_possibility = 1;
         } else //
         {
+            // alert('possibility_array.length == ' + '0');
             var i;
             for (i = 0; i < possibility_array.length; ++i) {
                 if (possibility_array[i]['related_count'] > 0) //
@@ -283,8 +285,8 @@ $(document).ready(function() {
     function check_delete_possibility(modelname, modelid, callback) {
         var delete_url = '/admin/delete_possibility_' + modelname.toLowerCase();
         // alert(delete_url);
-        // alert( 'modelid = ' + modelid);
-        // alert( 'modelname = ' + modelname);
+        // alert('modelid = ' + modelid);
+        // alert('modelname = ' + modelname);
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

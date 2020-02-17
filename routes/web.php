@@ -26,6 +26,11 @@ Route::post('/admin/delete_marka', function()
 Route::get('/home', 'HomeController@index')->name('home');
 
 // ******************************** Web site ********************************
+// Route::get('/clear-cache', function() {
+//   $exitCode = Artisan::call('cache:clear');
+//   // return what you want
+// });
+
 Route::get('/', 'SiteController@index');
 Route::get('/who-we-are', 'SiteController@whoweare');
 Route::get('/digitalrecetemiz', 'SiteController@digitalrecetemiz');
@@ -44,18 +49,23 @@ Route::get('/admin/dashboard', 'AdminController@dashboard');
 Route::get('/admin/settings', 'AdminController@settings');
 Route::get('/admin/check_password', 'AdminController@check_password');
 Route::post('/admin/update_password', 'AdminController@update_password');
-Route::get('/admin/load_contenttype', 'AdminController@loadContenttype');
+Route::get('/admin/load_contenttype', 'AdminController@loadContenttype'); 
 
 // ******************************** Config Types ********************************
 Route::get('/admin/configtype', 'ConfigtypeController@indexConfigTypes');
 Route::match(['get','post'] , '/admin/add_configtype', 'ConfigtypeController@addConfigType');
 Route::get('/admin/edit_row_configtype{id}' , 'ConfigtypeController@editRowConfigType');
 Route::post('/admin/update_configtype', 'ConfigtypeController@updateConfigType');
-Route::post('/admin/delete_possibility_configtype', 'ConfigtypeController@deletePassibilityConfigType');
-Route::post('/admin/delete_configtype', 'ConfigtypeController@deleteConfigType');
+Route::post('/admin/delete_possibility_config_type', 'ConfigtypeController@deletePassibilityConfigType');
+Route::post('/admin/delete_config_type', 'ConfigtypeController@deleteConfigType');
 
 // ******************************** Configs ********************************
-Route::get('/admin/configs', 'ConfigsController@indexConfigs');
+Route::get('/admin/config', 'ConfigController@indexConfig');
+Route::match(['get','post'] , '/admin/add_edit_config/', 'ConfigController@addConfig');
+Route::match(['get','post'] , '/admin/add_edit_config/{config_id}', 'ConfigController@editRowConfig');
+Route::post('/admin/update_config', 'ConfigController@updateConfig');
+Route::post('/admin/delete_possibility_site_config', 'ConfigController@deletePassibilityConfig');
+Route::post('/admin/delete_site_config', 'ConfigController@deleteConfig');
 
 // ********************************  Marka ********************************
 Route::match(['get'] , '/marka/{marka_slug}' , 'MarkaController@showMarka');

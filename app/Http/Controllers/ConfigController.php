@@ -3,29 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Site_Config;
 use App\Config_Type;
 use App\Model_Dependency;
 use Carbon\Carbon;
 use Session;
 use Illuminate\Support\Str;
 
-class ConfigtypeController extends Controller
+class ConfigController extends Controller
 {
-  public function indexConfigTypes()
+
+  public function indexConfig()
   {
     if(!Session::has('adminSession'))
     {
         return redirect('/admin')->with( 'flash_message_error' , 'Please login to access this page!!');
     }
 
-    $data = Config_Type::latest()->paginate(10);
+    $data = Site_Config::latest()->paginate(10);
     // echo '<pre>';
     // print_r($data);
     // die;
-    return view('admin.site_config_type.index_configtype' , compact('data'))->with('i' , (request()->input('page' , 1) -1)*10);
+    return view('admin.site_config.index_config' , compact('data'))->with('i' , (request()->input('page' , 1) -1)*10);
   }
 
-  public function addConfigType(Request $request)
+  public function addConfig(Request $request)
   {
     if(!Session::has('adminSession'))
     {
@@ -34,68 +36,79 @@ class ConfigtypeController extends Controller
 
     if($request->isMethod('get'))
     {
-        return view('admin.site_config_type.add_configtype');
+      $configtypes = Config_Type::all();
+      return view('admin.site_config.add_edit_config')->with(
+            ['configtypes' => $configtypes]);
     }
 
     $this->validate($request, 
     [
-        'input_configtype_title' => 'required|min:3|unique:config_types,configtype_title',
+        'input_configtype_id' => 'required',
+        'input_config_title' => 'required|min:3|unique:site_configs,config_title',
+        'input_config_value' => 'required',
     ],
     [
-        'input_configtype_title.required' => 'lütfen İçerik türü adını girin!! ',
-        'input_configtype_title.unique' => 'Lütfen benzersiz bir başlık girin!! ',
+        'input_configtype_id.required' => 'Lütfen ayar türünü seçin!! ',
+        'input_config_title.required' => 'lütfen Ayar adını girin!! ',
+        'input_config_title.unique' => 'Lütfen benzersiz bir başlık girin!! ',
+        'input_config_value.required' => 'Lütfen ayar değerini girin!! ',
     ]);
 
-    $configtype = new Config_Type();
 
-    $configtype->configtype_title = $request['input_configtype_title'];
-    $configtype->save();    
+    $site_config = new Site_Config();
+
+    $site_config->configtype_id = $request['input_configtype_id'];
+    $site_config->config_title = $request['input_config_title'];
+    $site_config->config_value = $request['input_config_value'];
+    $site_config->save();    
     
-    return redirect('/admin/configtype')->with( 'flash_message_success' , $request['input_configtype_title'].' ayar türü, başarıyla kaydedildi!!');;
+    return redirect('/admin/config')->with( 'flash_message_success' , $request['input_config_title'].' ayar türü, başarıyla kaydedildi!!');;
 
   }
 
-  public function editRowConfigType($id)
+  public function editRowConfig(Request $request , $id = 0 )
   {
       if(!Session::has('adminSession'))
       {
           return redirect('/admin')->with( 'flash_message_error' , 'Please login to access this page!!');
       }
-      $data = Config_Type::where('id', $id)->first();
-      return view('admin.site_config_type.update_configtype')->with('data' , $data);
-  }
-
-  public function updateConfigType(Request $request)
-  {
-    if(!Session::has('adminSession'))
-    {
-        return redirect('/admin')->with( 'flash_message_error' , 'Please login to access this page!!');
-    }
 
     if($request->isMethod('get'))
     {
-        return view('admin.site_config_type.add_configtype');
+      $config = Site_Config::where('id', $id)->first();
+      $configtypes = Config_Type::all();
+      return view('admin.site_config.add_edit_config')->with(
+        ['config' => $config , 
+         'configtypes' => $configtypes,]
+      );
     }
 
     $this->validate($request, 
     [
-        'input_configtype_title' => 'required|min:3|unique:config_types,configtype_title',
+        'input_configtype_id' => 'required',
+        'input_config_title' => 'required|min:3|unique:site_configs,config_title,'. $request['config_id'],
+        'input_config_value' => 'required',
     ],
     [
-        'input_configtype_title.required' => 'lütfen İçerik türü adını girin!! ',
-        'input_configtype_title.unique' => 'Lütfen benzersiz bir başlık girin!! ',
+        'input_configtype_id.required' => 'Lütfen ayar türünü seçin!! ',
+        'input_config_title.required' => 'lütfen Ayar adını girin!! ',
+        'input_config_title.unique' => 'Lütfen benzersiz bir başlık girin!! ',
+        'input_config_value.required' => 'Lütfen ayar değerini girin!! ',
     ]);
 
-    $configtype = Config_Type::where('id', $request['configtype_id'])->first();
-    $configtype->configtype_title = $request['input_configtype_title'];
-    $configtype->save();    
 
-    // return view('admin.configtype.update_configtype')->with('data' , $configtype)->with( 'flash_message_success' , $request['input_configtype_title'].' configtype, başarıyla kaydedildi!!');
-    return redirect('/admin/configtype')->with( 'flash_message_success' , $request['input_configtype_title'].' Ayar türü, başarıyla kaydedildi!!');;
+    $site_config = Site_Config::where('id' ,$request['config_id'] )->first();
+
+    $site_config->configtype_id = $request['input_configtype_id'];
+    $site_config->config_title = $request['input_config_title'];
+    $site_config->config_value = $request['input_config_value'];
+    $site_config->save();    
+    
+    return redirect('/admin/config')->with( 'flash_message_success' , $request['input_config_title'].' ayar türü, başarıyla kaydedildi!!');;
 
   }
 
-  public function deletePassibilityConfigType(Request $request)
+  public function deletePassibilityConfig(Request $request)
   {
     if(!Session::has('adminSession'))
     {
@@ -124,7 +137,7 @@ class ConfigtypeController extends Controller
           // $count = $data->$dependency_method->count();   // old code
           if($count > 0)
           {
-          $tmp_array["object_name"] = $data->configtype_title;
+          $tmp_array["object_name"] = $data->config_title;
           $tmp_array["model_name"] = $dependency->model_name;
           $tmp_array["related_model_name"] = $dependency->related_model_name;
           $tmp_array["is_delete_allowed_with_all_children"] = $dependency->is_delete_allowed_with_all_children;
@@ -144,7 +157,7 @@ class ConfigtypeController extends Controller
     }
   }
   
-  public function deleteConfigType(Request $request)
+  public function deleteConfig(Request $request)
   {
       if(!Session::has('adminSession'))
       {
@@ -153,28 +166,29 @@ class ConfigtypeController extends Controller
       
       if($request->ajax())
       {
-          $data = Config_Type::where('id', $request['model_id'])->first();
-          $configtype_title = $data->configtype_title;
-          $configtype_id = $data->id;
+          $data = Site_Config::where('id', $request['model_id'])->first();
+          $config_title = $data->config_title;
+          $config_id = $data->id;
           $checkDeleteCondition = 1;
           if($checkDeleteCondition)
           {
               $data->delete();
               return response([
                   'success'=>'success',
-                  'object_name'=>$configtype_title,
-                  'object_id'=>$configtype_id
+                  'object_name'=>$config_title,
+                  'object_id'=>$config_id
                   ]); 
           }
           else
           {
               return response([
                   'success'=>'fail',
-                  'object_name'=>$configtype_title,
-                  'object_id'=>$configtype_id
+                  'object_name'=>$config_title,
+                  'object_id'=>$config_id
                   ]);                 
           }
       }
   }
+
 
 }

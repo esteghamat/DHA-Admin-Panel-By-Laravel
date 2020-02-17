@@ -21,7 +21,7 @@
                       <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-cog"></i><span class="hide-menu">Sistem ayarları </span></a>
                           <ul aria-expanded="false" class="collapse  first-level">
                               <li class="sidebar-item"><a href="{{ url('admin/configtype') }}" class="sidebar-link"><i class="fas fa-qrcode"></i><span class="hide-menu"> Ayar türleri </span></a></li>
-                              <li class="sidebar-item"><a href="{{ url('admin/configs') }}" class="sidebar-link"><i class="fas fa-qrcode"></i><span class="hide-menu"> Ayarlar </span></a></li>
+                              <li class="sidebar-item"><a href="{{ url('admin/config') }}" class="sidebar-link"><i class="fas fa-qrcode"></i><span class="hide-menu"> Ayarlar </span></a></li>
                           </ul>
                       </li>
 

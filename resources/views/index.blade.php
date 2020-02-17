@@ -37,7 +37,7 @@
                             medya hesaplarınızı görünür yapıyoruz. DHA; doğru tedaviyle
                             markanızı iyileştir, çözüm üretir, yaratıcı fikirler geliştirir.
                             Siz muayenenize devam edin gerisini biz hallederiz! </p> -->
-                        <P>
+                        <P class="fs-sm">
                           <?php 
                              echo(nl2br($contentheads_anasayfa->contenthead_title_description));
                           ?>  
@@ -72,7 +72,7 @@
                     DHA; doğru tedaviyle markanızı iyileştir, çözüm üretir,
                     yaratıcı fikirler geliştirir. Siz dünyayı iyileştirmeye devam edin gerisini biz hallederiz! 
                 </p> -->
-                <p>
+                <p class="fs-sm">
                   {{ $contentheads_biz_kimiz->contenthead_title_description }}
                 </p>
             </div>
@@ -98,7 +98,7 @@
                             medya hesabınızı analiz ediyor, ihtiyaca
                             uygun düzenliyor, büyütüyor ve raporluyoruz.
                         </p> -->
-                        <p>
+                        <p class="fs-sm">
                             {{ $contentitem->contentitem_title_description }}
                         </p>
                     </div>
@@ -165,7 +165,7 @@
                         reiciendis in nihil magni est ad corporis sapiente consectetur ea!amet consectetur, adipisicing
                         elit. Est, aut?
                     </p> -->
-                    <p>
+                    <p class="fs-sm">
                       <?php 
                       echo(nl2br($contentheads_islerimiz->contenthead_title_description));
                       ?>  
@@ -180,7 +180,7 @@
                     <li><a class="btn active" data-filter="all" href="">HEPSI</a></li>
                     <li></li>
                     @foreach($filters as $filter)
-                      <li><a class="btn" data-filter="{{ $filter->filter_slug }}" href="">{{ $filter->filter_name }}</a></li>
+                      <li><a class="btn" data-filter="{{ $filter->filter_slug }}" href="#">{{ $filter->filter_name }}</a></li>
                       @if($i < $filters_count)
                       <li></li>
                       @endif
@@ -188,7 +188,7 @@
                     @endforeach
 
                     <!-- 
-                    <li><a class="btn active" data-filter="all" href="">HEPSI</a></li>
+                    <li><a class="btn active" data-filter="grid-item" href="">HEPSI</a></li>
                     <li></li>
                     <li><a class="btn" data-filter="graphic" href="##">GRAPHIC</a></li>
                     <li></li>
@@ -217,24 +217,26 @@
                 $i=1;
                 ?>
                 @foreach($contentitems_islerimiz as $iş)
-                  <div class="grid-item item{{ $i }} all {{ $iş->filter->filter_slug }}" data-filter="{{ $iş->filter->filter_slug }}" style="background-image:url('/backend_assets/uploaded_files/images/{{ $iş->contentitem_image_name }}'); background-repeat: no-repeat; no-repeat; background-position: center; background-size: cover;">
+                  <div class="grid-item item{{ $i }} all {{ $iş->filter->filter_slug }}">
+                    <img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $iş->contentitem_image_name	}}" alt="">
                   </div>
                   <?php $i=$i+1; ?>
                 @endforeach
                 @for($i ;$i<=8; $i++)
-                  <div class="grid-item item{{ $i }} all {{ $i }}" data-filter="{{ $i }}">
-                    {{ $i }}
+                  <div class="grid-item item{{ $i }} all {{ $i }}">
+                    <img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $iş->contentitem_image_name	}}" alt="">
                   </div>
                 @endfor
                 <!-- 
-                <div class="grid-item item1 all" data-filter="all">1</div>
-                <div class="grid-item item2 all" data-filter="all">2</div>
-                <div class="grid-item item3 all graphic" data-filter="graphic">3</div>
-                <div class="grid-item item4 all web" data-filter="web">4</div>
-                <div class="grid-item item5 all logo web" data-filter="web">5</div>
-                <div class="grid-item item6 all logo" data-filter="logo">6</div>
-                <div class="grid-item item7 all branding1" data-filter="branding">7</div>
-                <div class="grid-item item8 all digital1" data-filter="digital">8</div> -->
+                <div class="grid-item  branding"><img src="./dha-images/dijitalrecete1.jpg" alt=""></div>
+                <div class="grid-item  digital1"><img src="./dha-images/dijitalrecete1.jpg" alt="">2</div>
+                <div class="grid-item  graphic"><img src="" alt="">3</div>
+                <div class="grid-item  web"><img src="" alt="">4</div>
+                <div class="grid-item  logo web"><img src="" alt="">5</div>
+                <div class="grid-item  logo"><img src="" alt="">6</div>
+                <div class="grid-item  branding"><img src="" alt="">7</div>
+                <div class="grid-item  digital1"><img src="" alt="">8</div>
+                -->
             </div>
         </section>
 
@@ -408,10 +410,10 @@
                   $contentheads_blog = $contentheads_blog->first();
                 ?>
                 <div>
-                    <h1><span>{{ $contentheads_blog->contenthead_title }}</span></h1>
+                    <h1><span>{{ isset($contentheads_blog->contenthead_title) ? $contentheads_blog->contenthead_title : 'Blog' }}</span></h1>
                 </div>
                 <div>
-                    <h6>{{ $contentheads_blog->contenthead_title_description }}</h6>
+                    <h6>{{ isset($contentheads_blog->contenthead_title_description) ? $contentheads_blog->contenthead_title_description : '' }}</h6>
                 </div>
             </div>
             <div class="blog-slider">
@@ -431,12 +433,12 @@
                                 <img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt="">
                                 <div class="swipe-content">
                                     <div class="date">
-                                        <h5>{{ $contentitem->contentitem_title }}</h5>
+                                        <h5>{{ isset($contentitem->contentitem_title) ? $contentitem->contentitem_title : '' }}</h5>
                                     </div>
                                     <div>
                                         <p>
                                         <?php  
-                                            $blog_text = $contentitem->contentitem_title_description;
+                                            if(isset($contentitem->contentitem_title_description)) { $blog_text = $contentitem->contentitem_title_description; } else  { $blog_text = '';};
                                             $blog_text = substr($blog_text,0,100);
                                         ?>
                                         {{ $blog_text }}

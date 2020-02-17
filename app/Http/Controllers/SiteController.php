@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Portfolio;
 use App\Filter;
+use App\Site_Config;
+use App\Config_Type;
 use App\Site_Content_Head;
 use App\Site_Content_Item;
 use App\Site_Contactus_Message;
@@ -183,7 +185,26 @@ class SiteController extends Controller
       'input_contactus_message_text' => $request['input_contactus_message_text'],
     );
     
-    Mail::to('sm_iransoftware@yahoo.com')->send(new SendMail($data));
+    $configtype_email = Config_Type::where('configtype_title' , 'email')->first();
+    if($configtype_email)
+    {
+      $configtype_email_id = $configtype_email->id;
+    }
+    else {
+      $configtype_email_id = 0;
+    }
+    $receiver_contactus_email = Site_Config::where('configtype_id' , $configtype_email_id)
+    ->where('config_title' , 'Bize ulaşın e-posta alıcısı')->first();
+
+    if(isset($receiver_contactus_email))
+    {
+      $receiver_contactus_email_address = $receiver_contactus_email->config_value;
+    }
+    else {  
+      $receiver_contactus_email_address = 'm.esteghamatdba@gmail.com';
+    }
+
+    // Mail::to($receiver_contactus_email_address)->send(new SendMail($data));
 
     return back()->with('success' , 'Bizimle iletişime geçtiğiniz için teşekkürler.');
     // return redirect('/contact')->with( 'flash_message_success' , 'mesajınız "' . $request['input_contactus_message_subject'].'" başarıyla gönderildi.');;
@@ -192,7 +213,7 @@ class SiteController extends Controller
 
   public function blogdetails($blog_slug)
   {
-
+ 
     $contentheads = Site_Content_Head::whereHas('site_content_type', function ($query) {
       $query->where('contenttype_slug','=','blog');
     })->first(); 
