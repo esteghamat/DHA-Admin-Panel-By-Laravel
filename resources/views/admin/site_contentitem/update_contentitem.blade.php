@@ -128,7 +128,7 @@
                                       <label for="input_contentitem_image" class="col-sm-3 text-right control-label col-form-label">içerik görüntü</label>
                                       <div class="col-md-9">
                                         <div>
-                                            <img class="rounded responsive modalImage preview_image_file" id="contentitem_image_preview" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $data->contentitem_image_name }}" alt="" name="contentitem_image_preview" style="max-width: 100px; max-height: 100px;">
+                                            <img class="rounded responsive modalImage preview_image_file" id="contentitem_image_preview" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $data->contentitem_image_name }}" alt="" name="contentitem_image_preview" style="max-width: 100px; max-height: 100px;">
                                         </div>  
                                         <div style="margin-top:5px">
                                             <input class="input_image_file" id="input_contentitem_image" type="file" name="input_contentitem_image" accept="image/*">
@@ -146,7 +146,7 @@
                                       <label for="input_contentitem_logo_image" class="col-sm-3 text-right control-label col-form-label">içerik logo</label>
                                       <div class="col-md-9">
                                         <div>
-                                            <img class="rounded responsive modalImage preview_logo_image_file" id="contentitem_logo_image_preview" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $data->contentitem_logo_image_name }}" alt="" name="contentitem_logo_image_preview" style="max-width: 100px; max-height: 100px;">
+                                            <img class="rounded responsive modalImage preview_logo_image_file" id="contentitem_logo_image_preview" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $data->contentitem_logo_image_name }}" alt="" name="contentitem_logo_image_preview" style="max-width: 100px; max-height: 100px;">
                                         </div>  
                                         <div style="margin-top:5px">
                                             <input class="input_logo_image_file" id="input_contentitem_logo_image" type="file" name="input_contentitem_logo_image" accept="image/*">

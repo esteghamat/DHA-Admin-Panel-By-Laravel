@@ -2,13 +2,17 @@
 
 @section('content')
 
+<?php
+// dd(Config::get('constants.frontend_address'));
+?>
+
         <header>
             <section class="header">
-                <div class="header-left"><img src="{{ asset('frontend_assets/dha-images/3-03.png') }}" alt="">
+                <div class="header-left"><img src="{{ asset(Config::get('constants.frontend_address').'/dha-images/3-03.png') }}" alt="">
                 </div>
 
                 <div class="header-right">
-                    <div><img src="{{ asset('frontend_assets/dha-images/Vector Smart Object.png') }}" alt=""></div>
+                    <div><img src="{{ asset(Config::get('constants.frontend_address').'/dha-images/Vector Smart Object.png') }}" alt=""></div>
                     <div>
                         <?php
                           $contentheads_anasayfa = $contentheads->filter(function($item)
@@ -88,7 +92,7 @@
                 ?>
                 @foreach($contentitems_biz_kimiz as $contentitem)
                 <div>
-                    <div><img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_logo_image_name	}}" alt=""></div>
+                    <div><img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_logo_image_name	}}" alt=""></div>
                     <div>
                         <!-- <h1>DİJİTAL REKLAM YONETİMİ</h1> -->
                         <h1>{{ $contentitem->	contentitem_title }}</h1>
@@ -105,7 +109,7 @@
                 </div>
                 @endforeach
                 <!-- <div>
-                    <div><img src="{{ asset('frontend_assets/dha-images/2.png') }}" alt=""></div>
+                    <div><img src="{{ asset(Config::get('constants.frontend_address').'/dha-images/2.png') }}" alt=""></div>
                     <div>
                         <h1>İÇERİK YONETİMİ VE YAZARLIGI</h1>
                     </div>
@@ -118,7 +122,7 @@
                     </div>
                 </div>
                 <div>
-                    <div><img src="{{ asset('frontend_assets/dha-images/3.png') }}" alt=""></div>
+                    <div><img src="{{ asset(Config::get('constants.frontend_address').'/dha-images/3.png') }}" alt=""></div>
                     <div>
                         <h1>REPUTASYON YONETİMİ</h1>
                     </div>
@@ -130,7 +134,7 @@
                     </div>
                 </div>
                 <div>
-                    <div><img src="{{ asset('frontend_assets/dha-images/4.png') }}" alt=""></div>
+                    <div><img src="{{ asset(Config::get('constants.frontend_address').'/dha-images/4.png') }}" alt=""></div>
                     <div>
                         <h1>PRODUKSİYON</h1>
                     </div>
@@ -145,7 +149,7 @@
         </section>
         <section class="works-container">
             <div class="works-1">
-                <div><img src="{{ asset('frontend_assets/dha-images/Vector Smart Object.png') }}" alt=""></div>
+                <div><img src="{{ asset(Config::get('constants.frontend_address').'/dha-images/Vector Smart Object.png') }}" alt=""></div>
                 <div>
                     <?php
                       $contentheads_islerimiz = $contentheads->filter(function($item)
@@ -218,13 +222,13 @@
                 ?>
                 @foreach($contentitems_islerimiz as $iş)
                   <div class="grid-item item{{ $i }} all {{ $iş->filter->filter_slug }}">
-                    <img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $iş->contentitem_image_name	}}" alt="">
+                    <img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $iş->contentitem_image_name	}}" alt="">
                   </div>
                   <?php $i=$i+1; ?>
                 @endforeach
                 @for($i ;$i<=8; $i++)
                   <div class="grid-item item{{ $i }} all {{ $i }}">
-                    <img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $iş->contentitem_image_name	}}" alt="">
+                    <img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $iş->contentitem_image_name	}}" alt="">
                   </div>
                 @endfor
                 <!-- 
@@ -261,7 +265,7 @@
                   <?php 
                   echo(nl2br($contentheads_recetemiz->contenthead_title_description));
                   ?>  
-                  <img src="{{ asset('frontend_assets/dha-images/Vector Smart Object3.png') }}" alt="">
+                  <img src="{{ asset(Config::get('constants.frontend_address').'/dha-images/Vector Smart Object3.png') }}" alt="">
                 </p>
                 </div>
             </div>
@@ -430,7 +434,7 @@
                     @foreach($contentitems_blogs as $contentitem)
                         <div class="swiper-slide">
                             <div class="swipe">
-                                <img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt="">
+                                <img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt="">
                                 <div class="swipe-content">
                                     <div class="date">
                                         <h5>{{ isset($contentitem->contentitem_title) ? $contentitem->contentitem_title : '' }}</h5>
@@ -557,7 +561,7 @@
                         });
                     ?> 
                     @foreach($contentheads_referanslar as $contentitem)                    
-                        <div class="swiper-slide"><a href=""><img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt=""></a></div>
+                        <div class="swiper-slide"><a href=""><img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt=""></a></div>
                     @endforeach
                     <!-- <div class="swiper-slide"><img src="" alt=""></div>
                     <div class="swiper-slide"><img src="" alt=""></div>

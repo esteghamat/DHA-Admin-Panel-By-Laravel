@@ -6,7 +6,7 @@
         <section class="blog-body">
         @foreach($contentitems as $contentitem)
             <div class="blog-body-content">
-                <div><img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt=""></div>
+                <div><img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt=""></div>
                 <div><h1>{{ $contentitem->contentitem_title }}</h1>
                     <p>
                         {{ $contentitem->contentitem_title_description }}

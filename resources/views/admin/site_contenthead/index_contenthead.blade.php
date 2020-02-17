@@ -96,12 +96,12 @@
                                     <td style="vertical-align: middle;padding:5px">{{ $row->contenthead_description }}</td> -->
                                     <td style="padding:3px">
                                         @if($row->contenthead_image_name)
-                                          <img class="rounded responsive modalImage" id="contenthead_image_preview" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $row->contenthead_image_name }}" alt="" name="contenthead_image_preview" style="max-width: 100px; max-height: 100px;">
+                                          <img class="rounded responsive modalImage" id="contenthead_image_preview" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $row->contenthead_image_name }}" alt="" name="contenthead_image_preview" style="max-width: 100px; max-height: 100px;">
                                         @endif
                                     </td>
                                     <td style="padding:3px">
                                         @if($row->contenthead_logo_image_name)
-                                          <img class="rounded responsive modalImage" id="contenthead_logo_image_preview" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $row->contenthead_logo_image_name }}" alt="" name="contenthead_logo_image_preview" style="max-width: 100px; max-height: 100px;">
+                                          <img class="rounded responsive modalImage" id="contenthead_logo_image_preview" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $row->contenthead_logo_image_name }}" alt="" name="contenthead_logo_image_preview" style="max-width: 100px; max-height: 100px;">
                                         @endif
                                     </td>
                                     <td style="vertical-align: middle;padding:5px;text-align:center">

@@ -9,11 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('backend_assets/assets/images/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset(config('constants.backend_address').'/assets/images/favicon.png') }}">
     <title>Matrix Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
-    <link href="{{ asset('backend_assets/dist/css/style.min.css') }}" rel="stylesheet">
-    <!-- <link href="{{ asset('backend_assets/assets/libs/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet"> -->
+    <link href="{{ asset(config('constants.backend_address').'/dist/css/style.min.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset(config('constants.backend_address').'/assets/libs/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet"> -->
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,7 +44,7 @@
             <div class="auth-box bg-dark border-top border-secondary">
                 <div id="loginform">
                     <div class="text-center p-t-20 p-b-20">
-                        <span class="db"><img src="{{ asset('backend_assets/assets/images/logo.png') }}" alt="logo" /></span>
+                        <span class="db"><img src="{{ asset(config('constants.backend_address').'/assets/images/logo.png') }}" alt="logo" /></span>
                     </div>
                     @if(Session::has('flash_message_error'))
                         {{-- {!! session('flash_message_error') !!} --}}
@@ -135,10 +135,10 @@
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
-    <script src="{{ asset('backend_assets/assets/libs/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset(config('constants.backend_address').'/assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{ asset('backend_assets/assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('backend_assets/assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset(config('constants.backend_address').'/assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ asset(config('constants.backend_address').'/assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->

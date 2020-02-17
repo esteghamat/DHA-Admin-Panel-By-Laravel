@@ -61,7 +61,7 @@
                         <label for="image_marka_logo_file" class="col-sm-3 text-right control-label col-form-label">Marka logosu</label>
                         <div class="col-md-9">
                           <div>
-                              <img class="rounded responsive modalImage" id="image_marka_logo_file" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $marka->marka_logo_image_name }}" alt="" name="image_marka_logo_file" style="max-width: 100px; max-height: 100px;">
+                              <img class="rounded responsive modalImage" id="image_marka_logo_file" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $marka->marka_logo_image_name }}" alt="" name="image_marka_logo_file" style="max-width: 100px; max-height: 100px;">
                           </div>  
                         </div>
                       </div>

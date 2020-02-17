@@ -42,7 +42,7 @@
             <div class="grid-list all2 {{ $filter }}">
                <div class="flipinner">
                    <div class="flipfront">
-                       <img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt="">
+                       <img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt="">
                    </div>
                    <div class="flipback">
                    <h5>{{ $contentitem->contentitem_title }}</h5>

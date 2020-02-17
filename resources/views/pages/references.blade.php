@@ -19,7 +19,7 @@
             @foreach($contentitems as $contentitem)
                 <div class="refsample"><div>
                   <a href="{{ $contentitem->contentitem_url }}">
-                    <div><img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt=""></div>
+                    <div><img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt=""></div>
                   </a>
                 </div>
                   <h5>

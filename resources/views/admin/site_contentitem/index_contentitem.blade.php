@@ -120,12 +120,12 @@
                           <td style="vertical-align: middle;padding:5px">{{ $row->contentitem_keywords }}</td>
                           <td style="padding:3px">
                               @if($row->contentitem_image_name)
-                                <img class="rounded responsive modalImage" id="contentitem_image_preview" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $row->contentitem_image_name }}" alt="" name="contentitem_image_preview" style="max-width: 100px; max-height: 100px;">
+                                <img class="rounded responsive modalImage" id="contentitem_image_preview" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $row->contentitem_image_name }}" alt="" name="contentitem_image_preview" style="max-width: 100px; max-height: 100px;">
                               @endif
                           </td>
                           <td style="padding:3px">
                               @if($row->contentitem_logo_image_name)
-                                <img class="rounded responsive modalImage" id="contentitem_logo_image_preview" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $row->contentitem_logo_image_name }}" alt="" name="contentitem_logo_image_preview" style="max-width: 100px; max-height: 100px;">
+                                <img class="rounded responsive modalImage" id="contentitem_logo_image_preview" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $row->contentitem_logo_image_name }}" alt="" name="contentitem_logo_image_preview" style="max-width: 100px; max-height: 100px;">
                               @endif 
                           </td>
                           <td style="vertical-align: middle;padding:5px;text-align:center">

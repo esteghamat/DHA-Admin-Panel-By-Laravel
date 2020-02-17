@@ -1,4 +1,10 @@
 
+base_path = /home/fikirbu1/test.fikirbuzzprojects.com/dhasite     
+app_path = /home/fikirbu1/test.fikirbuzzprojects.com/dhasite/app     
+public_path = /home/fikirbu1/test.fikirbuzzprojects.com/dhasite/public     
+storage_path = /home/fikirbu1/test.fikirbuzzprojects.com/dhasite/storage  
+
+
 php artisan cache:clear
 php artisan route:clear
 php artisan config:clear
@@ -21,3 +27,16 @@ after changes :
 
 fikirbuzz.noreply@gmail.com
 fikirbuzz2020**
+
+
+
+
+'backend_assets
+config('constants.backend_address').'
+
+
+
+
+}}/{{Config::get('constants.backend_address')}}/
+
+}}/{{Config::get('constants.backend_address')}}/

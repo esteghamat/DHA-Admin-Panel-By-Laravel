@@ -76,7 +76,7 @@
                       @foreach($data as $row)
                   <tr id="tr_{{$row->id}}">
                           <td style="padding:3px">
-                              <img class="rounded responsive modalImage" id="marka_image_preview" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $row->marka_logo_image_name }}" alt="" name="marka_image_preview" style="max-width: 100px; max-height: 100px;">
+                              <img class="rounded responsive modalImage" id="marka_image_preview" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $row->marka_logo_image_name }}" alt="" name="marka_image_preview" style="max-width: 100px; max-height: 100px;">
                           </td>
                           <td style="vertical-align: middle;padding:5px">{{ $row->marka_name }}</td>
                           <td style="vertical-align: middle;padding:5px">{{ $row->marka_slug }}</td>

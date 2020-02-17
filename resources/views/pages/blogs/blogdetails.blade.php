@@ -14,7 +14,7 @@
 ?>
 
 
-<div class="blog-head-image"><img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitems_selected_blog->contentitem_image_name	}}" alt=""></div>
+<div class="blog-head-image"><img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitems_selected_blog->contentitem_image_name	}}" alt=""></div>
 
         <section class="blog-content">
             <div class="blog-content-left">
@@ -34,7 +34,7 @@
                 <div class="right-content">
                 @foreach($contentitems as $contentitem)  
                     <div>
-                        <div><img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt=""></div>
+                        <div><img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt=""></div>
                         <div><a href="/blog/blogdetails/{{ $contentitem->contentitem_slug }}">{{ $contentitem->contentitem_title }}</a></div>
                     </div>
                 @endforeach

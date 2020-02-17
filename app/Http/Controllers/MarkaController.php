@@ -73,7 +73,7 @@ class MarkaController extends Controller
         $currentDateTime = Carbon::now()->format('YmdHs');
         $image=$request->file('input_marka_logo_file');
         $new_name='img_uploaded_'.$currentDateTime.rand(1000 , 9999).'.'.$image->getClientOriginalExtension();
-        $image->move(public_path('backend_assets\uploaded_files\images'),$new_name);
+        $image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_name);
 
         $marka->marka_name = $request['input_marka_name'];
         $marka->marka_slug = Str::slug($request['input_marka_slug'], '-');
@@ -141,7 +141,7 @@ class MarkaController extends Controller
             ]);
             $currentDateTime = Carbon::now()->format('YmdHs');
             $new_name='img_uploaded_'.$currentDateTime.rand(1000 , 9999).'.'.$image->getClientOriginalExtension();
-            $image->move(public_path('backend_assets\uploaded_files\images'),$new_name);
+            $image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_name);
         }
         else
         {

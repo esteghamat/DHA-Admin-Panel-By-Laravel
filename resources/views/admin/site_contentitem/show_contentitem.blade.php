@@ -93,7 +93,7 @@
                                 <label for="contentitem_image_name" class="col-sm-3 text-right control-label col-form-label">Ana içerik görüntü</label>
                                 <div class="col-md-9">
                                   <div>
-                                      <img class="rounded responsive modalImage" id="contentitem_image_name" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_image_name }}" alt="" name="contentitem_image_name" style="max-width: 100px; max-height: 100px;">
+                                      <img class="rounded responsive modalImage" id="contentitem_image_name" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_image_name }}" alt="" name="contentitem_image_name" style="max-width: 100px; max-height: 100px;">
                                   </div>  
                                 </div>
                               </div>  
@@ -101,7 +101,7 @@
                                 <label for="contentitem_logo_image_name" class="col-sm-3 text-right control-label col-form-label">Ana içerik logo</label>
                                 <div class="col-md-9">
                                   <div>
-                                      <img class="rounded responsive modalImage" id="contentitem_logo_image_name" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_logo_image_name }}" alt="" name="contentitem_logo_image_name" style="max-width: 100px; max-height: 100px;">
+                                      <img class="rounded responsive modalImage" id="contentitem_logo_image_name" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_logo_image_name }}" alt="" name="contentitem_logo_image_name" style="max-width: 100px; max-height: 100px;">
                                   </div>  
                                 </div>
                               </div>  

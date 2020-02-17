@@ -28,7 +28,7 @@
         <section class="whoweare-container">
             @foreach($contentitems as $contentitem)
             <div>
-                <div><<img src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $contentitem->contentitem_logo_image_name	}}" alt=""></div>
+                <div><<img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_logo_image_name	}}" alt=""></div>
                 <div><h5>{{ $contentitem->contentitem_title }}</h5></div>
                 <div>
                   <p class="fs-sm">

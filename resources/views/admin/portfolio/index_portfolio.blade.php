@@ -87,7 +87,7 @@
                                     <td style="vertical-align: middle;padding:5px">{{ $row->portfolio_description }}</td>
                                     <td style="vertical-align: middle;padding:5px">{{ $row->filter->filter_name }}</td>
                                     <td style="padding:3px">
-                                        <img class="rounded responsive modalImage" id="portfolio_image_preview" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $row->portfolio_image_name }}" alt="" name="portfolio_image_preview" style="max-width: 100px; max-height: 100px;">
+                                        <img class="rounded responsive modalImage" id="portfolio_image_preview" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $row->portfolio_image_name }}" alt="" name="portfolio_image_preview" style="max-width: 100px; max-height: 100px;">
                                     </td>
                                     <td style="vertical-align: middle;padding:5px;text-align:center">
                                       <a href="{{ url('portfolio/'.$row->portfolio_slug) }}" class="btn btn-info" style="padding:3px;">
@@ -97,7 +97,7 @@
                                     </td>
                                     <td style="vertical-align: middle;padding:5px;">
                                         <a href="{{ url('admin/index_insert_gallery_image/'.$row->id . '/' .$row->portfolio_title. '/' . 'portfolio' . '/' . 'işler' ) }}" style="padding:3px">
-                                          <img class="rounded responsive modalImage" id="portfolio_image_preview" src="{{ URL::to('/') }}/backend_assets/assets/images/app_images/gallery_icon.jpg" alt="" style="max-width: 50px; max-height: 50px;"> 
+                                          <img class="rounded responsive modalImage" id="portfolio_image_preview" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/assets/images/app_images/gallery_icon.jpg" alt="" style="max-width: 50px; max-height: 50px;"> 
                                         <span style="color:grey;">
                                         (
                                         <?php

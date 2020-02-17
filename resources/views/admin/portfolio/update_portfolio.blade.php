@@ -116,7 +116,7 @@
                                       <label for="input_portfolio_image" class="col-sm-3 text-right control-label col-form-label">Ana işlerimizi görüntü</label>
                                       <div class="col-md-9">
                                         <div>
-                                            <img class="rounded responsive modalImage preview_image_file" id="portfolio_image_preview" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $data->portfolio_image_name }}" alt="" name="portfolio_image_preview" style="max-width: 100px; max-height: 100px;">
+                                            <img class="rounded responsive modalImage preview_image_file" id="portfolio_image_preview" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $data->portfolio_image_name }}" alt="" name="portfolio_image_preview" style="max-width: 100px; max-height: 100px;">
                                         </div>  
                                         <div style="margin-top:5px">
                                             <input class="input_image_file" id="input_portfolio_image" type="file" name="input_portfolio_image" accept="image/*">

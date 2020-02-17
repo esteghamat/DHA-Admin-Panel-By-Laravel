@@ -93,7 +93,7 @@
                             <label for="input_marka_logo_file" class="col-sm-3 text-right control-label col-form-label">Marka logosu yükleme</label>
                             <div class="col-md-9">
                               <div>
-                                  <img class="rounded responsive modalImage preview_logo_image_file" id="marka_image_preview" src="{{ URL::to('/') }}/backend_assets/uploaded_files/images/{{ $data->marka_logo_image_name }}" alt="" name="marka_image_preview" style="max-width: 100px; max-height: 100px;">
+                                  <img class="rounded responsive modalImage preview_logo_image_file" id="marka_image_preview" src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $data->marka_logo_image_name }}" alt="" name="marka_image_preview" style="max-width: 100px; max-height: 100px;">
                               </div>  
                               <div style="margin-top:5px">
                                   <input class="input_logo_image_file" id="input_marka_logo_file" type="file" name="input_marka_logo_file" accept="image/*" >
