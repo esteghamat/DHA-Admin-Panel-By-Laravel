@@ -8,7 +8,7 @@
             </div>
         </div>
         <nav class="navigation">
-            <div class="logo"><a href="{{ url('/') }}"><img src="{{ asset('frontend_assets/dha-images/Vector Smart Object1.png') }}" alt=""></a>
+            <div class="logo"><a href="{{ url('/') }}"><img src="{{ asset(config('constants.frontend_address').'/dha-images/Vector Smart Object1.png') }}" alt=""></a>
             </div>
 
             <div class="nav-links">

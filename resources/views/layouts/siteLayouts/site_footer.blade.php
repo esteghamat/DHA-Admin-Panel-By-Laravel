@@ -6,7 +6,7 @@
                     <div><i class="far fa-envelope"></i> info@digitalhealtagency.com</div>
                 </div>
                 <div class="footer-top-right">
-                    <a href=""><img src="{{ asset('frontend_assets/dha-images/Vector Smart Object copy 5.png') }}" alt=""></a>
+                    <a href=""><img src="{{ asset(config('constants.frontend_address').'/dha-images/Vector Smart Object copy 5.png') }}" alt=""></a>
                 </div>
             </div>
             <hr>
@@ -40,7 +40,7 @@
                         <li><a href="">Partnerler</a></li>
                         <li><a href="">Kariyer</a></li>
                     </div>
-                    <div class="foot-item3"><img src="{{ asset('frontend_assets/dha-images/Vector Smart Object2.png') }}" alt=""></div>
+                    <div class="foot-item3"><img src="{{ asset(config('constants.frontend_address').'/dha-images/Vector Smart Object2.png') }}" alt=""></div>
                 </div>
             </div>
         </footer>
