@@ -89,7 +89,7 @@
                         </div>  <!-- "card"  --> 
                     </div>  <!-- "col-md-6"  --> 
                 </div> <!-- End row  -->
-
+                
                 <div class="row el-element-overlay">
                 @if($gallery_image->count())
                     @foreach($gallery_image as $image)
@@ -97,10 +97,10 @@
                             <div class="card">
                                 <div class="el-card-item">
                                     <div class="el-card-avatar el-overlay-1"> 
-                                        <img src="/backend_assets/uploaded_files/images/{{ $image->image_file_name }}" alt=""/>
+                                        <img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $image->image_file_name }}" alt=""/>
                                         <div class="el-overlay">
                                             <ul class="list-style-none el-info">
-                                                <li class="el-item li_item_image_zoom" id="zoom_{{ $image->id }}" data-image_id="{{ $image->id }}" data-image_action="zoom"><a class="btn default btn-outline image-popup-vertical-fit el-link" href="/backend_assets/uploaded_files/images/{{ $image->image_file_name }}"><i class="mdi mdi-magnify-plus"></i></a></li>
+                                                <li class="el-item li_item_image_zoom" id="zoom_{{ $image->id }}" data-image_id="{{ $image->id }}" data-image_action="zoom"><a class="btn default btn-outline image-popup-vertical-fit el-link" href="/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $image->image_file_name }}"><i class="mdi mdi-magnify-plus"></i></a></li>
                                                 <li class="el-item li_item_image_edit" id="edit_{{ $image->id }}" data-image_id="{{ $image->id }}" data-image_action="edit"><a class="btn default btn-outline el-link edit_href" href="{{ url('admin/edit_row_gallery_image'.$image->id) }}"><i class="fas fa-edit"></i></a></li>
                                                 <li class="el-item li_item_image_delete" id="delete_{{ $image->id }}" data-image_id="{{ $image->id }}" data-image_action="delete"><a class="btn default btn-outline el-link delete_href" href="javascript:void(0);"><i class="fas fa-times"></i></a></li>
                                             </ul>
@@ -121,29 +121,3 @@
             <!-- ============================================================== -->
 
             @endsection
-
-<!-- My Gallery -->
-<!-- <div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-            <hr class="mt-2 mb-2">
-            <div class="row text-center text-lg-left">
-            @if($gallery_image->count())
-                @foreach($gallery_image as $image)
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <a href="/backend_assets/uploaded_files/images/{{ $image->image_file_name }}" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="/backend_assets/uploaded_files/images/{{ $image->image_file_name }}" alt="">
-                        <div class="row">
-                            <div class="col-sm-12" sty>
-                                <div class="image-title text-dark">{{ trim($image->image_title) }}</div>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                @endforeach
-            @endif    
-        </div>  
-        </div>  
-    </div>  
-</div>  -->
