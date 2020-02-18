@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'fikirbuzz.com'),
+    'host' => env('MAIL_HOST', 'smtp.mailtrap.io'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 2525),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'mohammad.esteghamat@fikirbuzz.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'sm_iransoftware@yahoo.com'),
         'name' => env('MAIL_FROM_NAME', 'fikirbuzz_noreply'),
     ],
 
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('mohammad.esteghamat@fikirbuzz.com'),
+    'username' => env('9b09f03b867fc2'),
 
-    'password' => env('mohammed2020**'),
+    'password' => env('5f8ea07c4cc053'),
 
     /*
     |--------------------------------------------------------------------------

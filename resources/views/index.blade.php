@@ -5,7 +5,6 @@
 <?php
 // dd(Config::get('constants.frontend_address'));
 ?>
-
         <header>
             <section class="header">
                 <div class="header-left"><img src="{{ asset(Config::get('constants.frontend_address').'/dha-images/3-03.png') }}" alt="">
