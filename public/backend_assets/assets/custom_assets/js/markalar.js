@@ -1,4 +1,10 @@
 $(document).ready(function() {
+  var frontend_address = '/frontend_assets';
+  var backend_address  = '/backend_assets';
+  var up_site = '';
+  // var up_site = '/dhasite';
+  // var frontend_address = '/public/frontend_assets';
+  // var backend_address  = '/public/backend_assets';
 
     // *****************  input_image / change ***************** 
     $('.input_image_file').change(function() {
@@ -14,10 +20,10 @@ $(document).ready(function() {
             }
             reader.readAsDataURL(input.files[0]);
         } else {
-            $('.preview_image_file').attr('src', site_url + '/backend_assets/assets/images/no_preview.jpg');
+            $('.preview_image_file').attr('src', site_url + backend_address + '/assets/images/no_preview.jpg');
         }
     });
-
+ 
     // *****************  input_logo_image / change ***************** 
     $('.input_logo_image_file').change(function() {
         var site_url = window.location.origin;
@@ -35,14 +41,14 @@ $(document).ready(function() {
         } //
         else //
         {
-            $('.preview_logo_image_file').attr('src', site_url + '/backend_assets/assets/images/no_preview.jpg');
+            $('.preview_logo_image_file').attr('src', site_url + backend_address + '/assets/images/no_preview.jpg');
         }
     });
 
     // *****************  .remove image / click ***************** 
     $('.delete_image_button').click(function() {
         var site_url = window.location.origin;
-        $('.preview_image_file').attr('src', site_url + '/backend_assets/assets/images/no_preview.jpg');
+        $('.preview_image_file').attr('src', site_url + backend_address + '/assets/images/no_preview.jpg');
         $('.input_image_file').val('');
         $('.input_hidden_image_name').val('');
     });
@@ -50,7 +56,7 @@ $(document).ready(function() {
     // *****************  .remove logo image / click ***************** 
     $('.delete_logo_image_button').click(function() {
         var site_url = window.location.origin;
-        $('.preview_logo_image_file').attr('src', site_url + '/backend_assets/assets/images/no_preview.jpg');
+        $('.preview_logo_image_file').attr('src', site_url + backend_address + '/assets/images/no_preview.jpg');
         $('.input_logo_image_file').val('');
         $('.input_hidden_logo_image_name').val('');
     });
@@ -369,7 +375,7 @@ $(document).ready(function() {
         $('#btn_add_contentitem').attr('onclick', "window.location.href = '" + new_btn_url + "'");
 
         url_contentitem_slug = '/contentitem/' + contetnttype_slug;
-        window.location.href = site_url + url_contentitem_slug;
+        window.location.href = site_url + up_site + url_contentitem_slug;
     });
 
     $('#btn_add_contentitem').click(function() {

@@ -160,7 +160,9 @@ class ContentitemController extends Controller
       $currentDateTime = Carbon::now()->format('YmdHs');
       $image=$request->file('input_contentitem_image');
       $new_name='img_uploaded_itemimage_'.$currentDateTime.rand(1000 , 9999).'.'.$image->getClientOriginalExtension();
-      $image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_name);        
+      // $image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_name);        
+      $image->move(public_path('backend_assets/uploaded_files/images'),$new_name);
+
     }
 
     if ($logo_image != '')
@@ -168,8 +170,9 @@ class ContentitemController extends Controller
       $currentDateTime = Carbon::now()->format('YmdHs');
       $logo_image=$request->file('input_contentitem_logo_image');
       $new_logo_name='img_uploaded_itemlogo_'.$currentDateTime.rand(1000 , 9999).'.'.$logo_image->getClientOriginalExtension();
-      $logo_image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_logo_name);        
-    }
+      // $logo_image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_logo_name);        
+      $logo_image->move(public_path('backend_assets/uploaded_files/images'),$new_logo_name);
+    } 
 
     $contentitem->site_content_type_id = $request['input_hidden_contentitem_contenttype_id'];
     $contentitem->contentitem_title = $request['input_contentitem_title'];
@@ -276,7 +279,8 @@ class ContentitemController extends Controller
           $currentDateTime = Carbon::now()->format('YmdHs');
           $image=$request->file('input_contentitem_image');
           $new_name='img_uploaded_itemimage_'.$currentDateTime.rand(1000 , 9999).'.'.$image->getClientOriginalExtension();
-          $image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_name);        
+          // $image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_name);        
+          $image->move(public_path('backend_assets/uploaded_files/images'),$new_name);
         }
         else
         {
@@ -288,7 +292,8 @@ class ContentitemController extends Controller
           $currentDateTime = Carbon::now()->format('YmdHs');
           $logo_image=$request->file('input_contentitem_logo_image');
           $new_logo_name='img_uploaded_itemlogo_'.$currentDateTime.rand(1000 , 9999).'.'.$logo_image->getClientOriginalExtension();
-          $logo_image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_logo_name);
+          // $logo_image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_logo_name);
+          $logo_image->move(public_path('backend_assets/uploaded_files/images'),$new_logo_name);
         }
         else
         {

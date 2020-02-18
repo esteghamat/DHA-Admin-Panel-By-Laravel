@@ -36,7 +36,7 @@ class MarkaController extends Controller
 
       return view('admin.marka.show_marka')->with('marka' , $marka);
     }
-    
+
     public function addMarka(Request $request)
     {
         if(!Session::has('adminSession'))
@@ -49,7 +49,7 @@ class MarkaController extends Controller
             return view('admin.marka.add_marka');
         }
 
-        $this->validate($request, 
+        $this->validate($request,
         [
             'input_marka_name' => 'required',
             'input_marka_slug' => 'required|min:3|unique:markas,marka_slug',
@@ -73,15 +73,27 @@ class MarkaController extends Controller
         $currentDateTime = Carbon::now()->format('YmdHs');
         $image=$request->file('input_marka_logo_file');
         $new_name='img_uploaded_'.$currentDateTime.rand(1000 , 9999).'.'.$image->getClientOriginalExtension();
-        $image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_name);
+        $path = public_path(config('constants.backend_address').'\uploaded_files\images');
+        $path = str_replace("public/public","public",$path);
+
+        // $image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_name);
+        //---------------
+        // $path = public_path(config('constants.backend_address').'\uploaded_files\images');
+        // $path = str_replace("public/public","public",$path);
+        // $image->move($path,$new_name);
+        //------------------
+        if(!$image->move(public_path('backend_assets/uploaded_files/images'),$new_name))
+        {
+          dd("Error savıng. ");
+        }
 
         $marka->marka_name = $request['input_marka_name'];
         $marka->marka_slug = Str::slug($request['input_marka_slug'], '-');
         $marka->marka_keywords = $request['input_marka_keywords'];
         $marka->marka_description = $request['input_marka_description'];
-        $marka->marka_logo_image_name=$new_name;   
-        $marka->save();    
-        
+        $marka->marka_logo_image_name=$new_name;
+        $marka->save();
+
         // return redirect('/admin/add_marka')->with( 'flash_message_success' , $request['input_marka_name'].' marka, başarıyla kaydedildi!!');
         return redirect('/marka')->with( 'flash_message_success' , $request['input_marka_name'].' marka, başarıyla kaydedildi!!');;
     }
@@ -126,7 +138,7 @@ class MarkaController extends Controller
         $image = $request->file('input_marka_logo_file');
         if (($image != '') or ($request['input_hidden_marka_image_name'] == ''))
         {
-            $this->validate($request, 
+            $this->validate($request,
             [
                 'input_marka_name' => 'required',
                 'input_marka_slug' => 'required|min:3|unique:markas,marka_slug,' . $request['marka_id'],
@@ -141,11 +153,28 @@ class MarkaController extends Controller
             ]);
             $currentDateTime = Carbon::now()->format('YmdHs');
             $new_name='img_uploaded_'.$currentDateTime.rand(1000 , 9999).'.'.$image->getClientOriginalExtension();
-            $image->move(public_path(config('constants.backend_address').'\uploaded_files\images'),$new_name);
+
+            //----------------
+            // $path = public_path(config('constants.backend_address').'\uploaded_files\images');
+            // $path = str_replace("public/public","public",$path);
+            // $image->move($path,$new_name);
+            //----------------------
+            // $image->move(base_path().'/'.config('constants.backend_address').'\uploaded_files\images',$new_name);
+            // $d = base_path().'/'.config('constants.backend_address').'\uploaded_files\images';
+            // $p = public_path(config('constants.backend_address').'\uploaded_files\images');
+            // dd("base = ".$d . "   public=  ". $p);
+            //----------------------
+            // dd(public_path('backend_assets/uploaded_files/images'));
+            if(!$image->move(public_path('backend_assets/uploaded_files/images'),$new_name))
+            {
+              dd("Error savıng. ");
+            }
+
         }
+
         else
         {
-            $this->validate($request, 
+            $this->validate($request,
             [
                 'input_marka_name' => 'required',
                 'input_marka_slug' => 'required|min:3|unique:markas,marka_slug,' . $request['marka_id'],
@@ -168,8 +197,8 @@ class MarkaController extends Controller
         $marka->marka_slug = Str::slug($request['input_marka_slug'], '-');
         $marka->marka_keywords = $request['input_marka_keywords'];
         $marka->marka_description = $request['input_marka_description'];
-        $marka->marka_logo_image_name=$new_name;   
-        $marka->save();    
+        $marka->marka_logo_image_name=$new_name;
+        $marka->save();
 
         // return view('admin.marka.update_marka')->with('data' , $marka)->with( 'flash_message_success' , $request['input_marka_name'].' marka, başarıyla kaydedildi!!');
         return redirect('/marka')->with( 'flash_message_success' , $request['input_marka_name'].' marka, başarıyla kaydedildi!!');;
@@ -212,22 +241,22 @@ class MarkaController extends Controller
             $possibility_array[] = $tmp_array;
             $i = $i + 1;
             }
-          }  
+          }
           return $possibility_array;
       }
-      else 
+      else
       {
         return redirect('/admin/dashboard');
       }
     }
-    
+
     public function deleteMarka(Request $request)
     {
         if(!Session::has('adminSession'))
         {
             return redirect('/admin')->with( 'flash_message_error' , 'Please login to access this page!!');
         }
-        
+
         if($request->ajax())
         {
             $data = Marka::where('id', $request['model_id'])->first();
@@ -248,7 +277,7 @@ class MarkaController extends Controller
                     'success'=>'success',
                     'object_name'=>$marka_name,
                     'object_id'=>$marka_id
-                    ]); 
+                    ]);
             }
             else
             {
@@ -256,10 +285,10 @@ class MarkaController extends Controller
                     'success'=>'fail',
                     'object_name'=>$marka_name,
                     'object_id'=>$marka_id
-                    ]);                 
+                    ]);
             }
         }
     }
-    
+
 }
 
