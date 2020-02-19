@@ -49,6 +49,11 @@ Route::post('/admin/footer', 'FooterController@updateFooter');
 Route::match(['get' , 'post'] , '/admin', 'AdminController@login');
 Route::get('/logout', 'AdminController@logout');
 Auth::routes();
+// Route::get('/admin/register', 'Auth\RegisterController@showRegistrationForm');
+// Route::post('/admin/register', 'Auth\RegisterController@register');
+Route::get('/admin/register', 'AdminController@register');
+Route::post('/admin/register', 'AdminController@register');
+
 Route::get('/admin/dashboard', 'AdminController@dashboard');
 Route::get('/admin/settings', 'AdminController@settings');
 Route::get('/admin/check_password', 'AdminController@check_password');

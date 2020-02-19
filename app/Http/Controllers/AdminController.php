@@ -8,6 +8,10 @@ use Session;
 use App\User;
 use App\Site_Content_Type;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Carbon\Carbon;
+
+
 
 class AdminController extends Controller
 {
@@ -49,6 +53,47 @@ class AdminController extends Controller
             return view('admin.admin_login');
         }
     }
+
+    public function register(Request $request)
+    {
+      if(Session::has('adminSession'))
+      {
+          return view('admin.dashboard'); 
+      }
+      if($request->isMethod('get'))
+      {
+        return view('admin.admin_register');
+      }  
+ 
+    // dd($request['name'] . '---' . $request['email'] . '---' .  $request['password'] );
+    $this->validate($request, 
+    [
+      'name' => 'required|string|max:255|unique:users,name',
+      'email' => 'required|string|email|max:255|unique:users,email',
+      'password' => 'required|min:8|confirmed',
+    ],
+    [
+        'name.required' => 'lütfen kullanıcı adı girin!!',
+        'name.string' => 'lütfen sadece geçerli karakterler girin!!',
+        'name.unique' => 'lütfen benzersiz kullanıcı adı girin!!',
+        'email.required' => 'lütfen e-posta girin!!',
+        'email.string' => 'lütfen sadece geçerli karakterler girin!!',
+        'email.email' => 'lütfen geçerli bir e-posta biçimi girin!!',
+        'email.unique' => 'lütfen benzersiz e-posta girin!!',
+        'password.required' => 'lütfen şifre giriniz!!',
+        'password.string' => 'lütfen sadece geçerli karakterler girin!!',
+        'password.min' => 'şifre en az 8 harf olmalıdır!!',
+    ]);
+
+    $newuser = new User();
+    $newuser->name = $request['name'];
+    $newuser->email = $request['email'];
+    $newuser->password =Hash::make($request['password']);
+    $newuser->save();    
+    
+    return redirect('/admin')->with( 'flash_message_success' , 'lütfen giriş yapın');
+
+}
 
     public function dashboard()
     {
