@@ -2,6 +2,9 @@
     width: device-width ;
     zoom: 3.0 ;
   } */
+  p, ul, ol, dl, pre, address, fieldset, figure{
+      margin: 0 0 0 0 !important;
+  }
   .fs-xs{
       font-size: 12px;
   }
@@ -462,7 +465,7 @@ header {
     justify-content: center;
     list-style-type: none;
     position: relative;
-    font-size: .7rem;
+    font-size: 14px;
     padding-left: 0px;
 
 }
@@ -501,7 +504,7 @@ header {
     display: inline-block;
     width: 200px;
     height: 200px;
-    /* background-color: gray; */
+    background-color: gray;
     overflow: hidden;
 }
 .works-container .works-3 div img{
@@ -509,7 +512,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: 1;
     top: 0;
     left: 0;
     
@@ -601,7 +604,7 @@ header {
     top: 0;
     width: 2px;
     height: 10px;
-    background-color: dodgerblue;
+    background-color: #27a3a8;
 }
 
 .digital h1 span::before {
@@ -611,7 +614,7 @@ header {
     top: 0;
     width: 10px;
     height: 2px;
-    background-color: dodgerblue;
+    background-color: #27a3a8;
 }
 
 .digital h1::after {
@@ -621,7 +624,7 @@ header {
     top: 0;
     width: 2px;
     height: 10px;
-    background-color: dodgerblue;
+    background-color: #27a3a8;
 }
 
 .digital h1 span::after {
@@ -631,7 +634,7 @@ header {
     top: 0;
     width: 10px;
     height: 2px;
-    background-color: dodgerblue;
+    background-color: #27a3a8;
 }
 
 /* ******************** **************************koseler2********************/
@@ -642,7 +645,7 @@ header {
     left: 0;
     width: 2px;
     height: 10px;
-    background-color: dodgerblue;
+    background-color: #27a3a8;
 }
 
 .digital-pros .swiper-slide span::before {
@@ -652,7 +655,7 @@ header {
     left: 0;
     width: 10px;
     height: 2px;
-    background-color: dodgerblue;
+    background-color: #27a3a8;
 }
 
 .digital-pros .swiper-slide::after {
@@ -662,7 +665,7 @@ header {
     right: 0;
     width: 2px;
     height: 10px;
-    background-color: dodgerblue;
+    background-color: #27a3a8;
 }
 
 .digital-pros .swiper-slide span::after {
@@ -672,28 +675,27 @@ header {
     right: 0;
     width: 10px;
     height: 2px;
-    background-color: dodgerblue;
+    background-color: #27a3a8;
 }
 
 /****************************************************************************************/
 
 .digital-pros .vertical-line {
     height: 20px;
-    border-left: 1.3px solid skyblue;
+    border-left: 1.3px solid #27a3a8;
     margin-left: 50%;
     margin-bottom: 10px;
 }
-
-/* .swiper-wrapper{
-    width: 500px;
-} */
-.digital-pros .swiper-slide p,
-h5,
-h6 {
-    font-size: 1rem;
+.digital-pros .swiper-slide p {
+    font-size: 2.2vh;
+    color: black;
 }
 
 .digital-pros .swiper-slide h5 {
+    /* font-weight: 400; */
+    color: black;
+}
+.digital-pros .swiper-slide h4 {
     font-weight: 700;
 }
 
@@ -833,9 +835,12 @@ h6 {
 }
 
 .blog .blog-slider .swipe .swipe-content {
-    left: 10px;
+    /* left: 10px; */
+    padding: 10px;
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
+    background-color: darkslategray ;
+    color: wheat;
 }
 .blog .blog-slider .swipe img{
     position: absolute;
@@ -846,6 +851,7 @@ h6 {
 
 .blog .blog-slider .swipe .swipe-content h5 {
     margin-bottom: 0px;
+    color: whitesmoke;
 }
 
 .blog .blog-slider .swipe .swipe-content p {
@@ -1318,11 +1324,13 @@ h6 {
     background-color: gray;
     transition: .5s cubic-bezier(0.13, 0.4, 0, 4.03);
     position: relative;
+    overflow: hidden;
 }
 .refcontainer .refsample div img{
     width: 100%;
     height: 100%;
     position: absolute;
+    top: 0;
     left: 0;
     object-fit: cover;
 }
@@ -1338,23 +1346,23 @@ h6 {
     transform: rotateZ(15deg);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
-.refcontainer .refsample div::before {
-    content: "visit the site";
-    /* cursor: pointer; */
-    overflow: hidden;
-    bottom: 0;
-    left: 0;
-    width: 250px;
-    height: 0px;
-    background-color: #27A3A8;
+.refsample div span{
     position: absolute;
-    z-index: 5;
+    background-color: #27A3A8;
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
     transition: .5s ease-in-out;
 }
-
-.refcontainer .refsample div:hover::before {
-    height: 50%;
+.refsample div:hover > span{
+    bottom: 0;
+}
+.refsample div span i{
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 /* ***********************************************************************BLOG.HTML **********************/
@@ -1455,6 +1463,7 @@ h6 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 700px !important;
 }
 
 .work-sample-2> div {
@@ -1487,17 +1496,41 @@ h6 {
   .flipfront {
     background-color: #bbb;
     color: black;
+    overflow: hidden;
   }
-  
+  .flipfront img{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+  }
   .flipback {
     background-color: #2980b9;
     color: white;
     transform: rotateY(180deg);
   }
   
-
+  .flipback div{
+      width: 50%;
+      height: auto;
+      top: 10%;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+  }
+.flipback div p{
+    /* position: absolute; */
+    width: 100%;
+    /* float: left; */
+    text-align: center;
+}
 /* **********************************************************CONTACT.HTML********************************************** */
 /* ************************************************************************************************************** */
+.contant-mean{
+    min-height: 500px;
+}
  .contact-header{
     margin-left: 100px;
     margin-bottom: 50px;
@@ -1567,7 +1600,7 @@ h6 {
 .form .form-submit{
     margin-top: 30px;
 }
-.form .form-submit button {
+.form .form-submit input {
     float: right;
     padding: 10px 30px;
     outline: none;
@@ -1583,13 +1616,54 @@ h6 {
     color: #27a3a8;
     transition-delay: 100ms;
 }
-.form .form-submit button:hover{
+.form .form-submit input:hover{
     box-shadow: 0 0 7px 0 #27a3a8 inset, 0 0 2px 2px #27a3a8;
     border: 3px solid #27a3a8;
     background-color: #1cc6cc ;
     color: whitesmoke;
     font-size: .7rem;
     font-weight: 900;
+}
+.showmessage{
+    display: none;
+    float: right;
+    margin-right: 200px;
+    background-color: #28a745;
+    padding: 50px 50px;
+    border-radius: 5px;
+    color: wheat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.showmessage p i{
+    animation-name: myanime;
+    animation-duration: 1.6s;
+    transition: 1.6s ease-in-out;
+}
+@keyframes myanime{
+    0% {
+        transform: scale(2,2);
+       
+    }
+    20% {
+        transform: scale(1.3,1.3);
+       
+    }
+    40% {
+        transform: scale(1.5,1.5);
+       
+    }
+    60% {
+        transform: scale(1.4,1.4);
+       
+    }
+    100% {
+        transform: scale(3,3);
+       
+    }
 }
 
 
@@ -1729,18 +1803,24 @@ h6 {
     .works-1 div p {
         font-size: 1rem;
     }
-
-    .works-2 {
-        width: 90%;
+    .works-2 ul li{
+        font-size: 14px;
     }
+    .works-2 ul {
+        flex-wrap: wrap;
+    }
+    .works-2 ul li {
+        margin: 0 10px;
+    }
+
 
     .works-2 li:nth-child(even) {
         display: none;
     }
 
-    .works-2 li {
+    /* .works-2 li {
         font-size: .6rem;
-    }
+    } */
 
     .works-3 {
         display: block;
@@ -1982,6 +2062,9 @@ h6 {
         margin-right: auto;
         display: flex;
     }
+    .work-sample-2{
+        min-height: 500px;
+    }
     /* ***************************************************************************CONTACT.HTML************************ */
     /* ***************************************************************************************************************** */
     .form .form-inputs{
@@ -2156,9 +2239,10 @@ h6 {
 
     /*********************************************************************************** CONTACT.HTML ****/
     /* ***************************************************************************************************** */
-    .form{
-        /* margin-bottom: 200px; */
-    }
+    /* .form{
+        margin-bottom: 200px;
+    }*/
+    
     .form .form-inputs{
         display: block;
         justify-content: center;

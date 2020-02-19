@@ -25,21 +25,25 @@ Route::post('/admin/delete_marka', function()
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// ******************************** Web site ********************************
 // Route::get('/clear-cache', function() {
 //   $exitCode = Artisan::call('cache:clear');
 //   // return what you want
 // });
 
+// ******************************** Web site ********************************
 Route::get('/', 'SiteController@index');
-Route::get('/who-we-are', 'SiteController@whoweare');
-Route::get('/digitalrecetemiz', 'SiteController@digitalrecetemiz');
+Route::get('/biz-kimiz', 'SiteController@whoweare');
+Route::get('/dijital-recetemiz', 'SiteController@digitalrecetemiz');
 Route::get('/references', 'SiteController@references');
-Route::get('/work-samples', 'SiteController@worksamples');
+Route::get('/islerimiz', 'SiteController@worksamples');
 Route::get('/blog', 'SiteController@blog');
-Route::get('/blog/blogdetails/{blog_slug}', 'SiteController@blogdetails');
+Route::get('/blog/{blog_slug}', 'SiteController@blogdetails');
 Route::get('/contact', 'SiteController@contact');
 Route::post('/contact/send_email', 'SiteController@contactus_savemessage_sendemail');
+
+// ********************************  Footer ********************************
+Route::get('/admin/footer', 'FooterController@editFooter');
+Route::post('/admin/footer', 'FooterController@updateFooter');
 
 // ********************************  Admin ********************************
 Route::match(['get' , 'post'] , '/admin', 'AdminController@login');

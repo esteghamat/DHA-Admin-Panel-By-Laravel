@@ -78,7 +78,7 @@
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label for="contentitem_title_description" class="col-sm-3 text-right control-label col-form-label">Başlık açıklaması</label>
+                                <label for="contentitem_title_description" class="col-sm-3 text-right control-label col-form-label">Kısa Açıklama</label>
                                 <div class="col-sm-9">
                                     <textarea class="form-control" name="contentitem_title_description" id="contentitem_title_description" placeholder="İş açıklaması" disabled>{{ $contentitem->contentitem_title_description }}</textarea>
                                 </div>

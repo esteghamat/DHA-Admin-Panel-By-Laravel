@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+    <div class="contant-mean">
         <div class="contact-header">
             <h1>Randevu</h1>
             <h6>Randevu için bilgileriniz ekleyin, bize göderin. Size enuygun zamanı belirleyelim</h6>
@@ -56,7 +56,13 @@
                   @enderror
                 </div>
             </div>
-            <div class="form-submit"><button type="submit">GONDER</button></div>    
+            <div class="form-submit">
+                    <input type="submit" class="btn1" value="GONDER">
+                </div>
         </form>
-
+    </div>    
+    <div class="showmessage">
+        <p> mesajınız basarıyla iletildi <br> <i class="fas fa-thumbs-up"></i></p>
+    </div>
+ 
 @endsection

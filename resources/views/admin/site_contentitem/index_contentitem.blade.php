@@ -152,11 +152,11 @@
 
                         @if($i==1)
                           <tr class="tr_{{$row->id}}" id="tr_2_{{$row->id}}">
-                          <th colspan="2" style="font-weight: bold;">Başlık açıklaması : </th>
+                          <th colspan="2" style="font-weight: bold;">Kısa Açıklama : </th>
                           <td colspan="7">{{ $row->contentitem_title_description }}</td>
                         @else
                           <tr class="tr_{{$row->id}}" class="header_body_tr" id="tr_2_{{$row->id}}">
-                          <th class="header_body_tr" colspan="2" style="font-weight: bold;">Başlık açıklaması : </th>
+                          <th class="header_body_tr" colspan="2" style="font-weight: bold;">Kısa Açıklama : </th>
                           <td class="header_body_tr" colspan="7">{{ $row->contentitem_title_description }}</td>
                         @endif
                         </tr>    

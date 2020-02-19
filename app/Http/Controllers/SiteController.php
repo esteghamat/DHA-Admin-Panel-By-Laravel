@@ -10,6 +10,7 @@ use App\Config_Type;
 use App\Site_Content_Head;
 use App\Site_Content_Item;
 use App\Site_Contactus_Message;
+use App\Footer;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
 
@@ -50,7 +51,7 @@ class SiteController extends Controller
       $query->where('contenttype_slug','=','biz_kimiz');
     })->orderBy('custom_order' , 'ASC')->get(); 
       
-    return view('pages.who-we-are')->with(
+    return view('pages.biz-kimiz')->with(
       [
         'contentheads' => $contentheads , 
         'contentitems' => $contentitems , 
@@ -128,7 +129,7 @@ class SiteController extends Controller
       $query->where('contenttype_slug','=','islerimiz');
     })->orderBy('custom_order' , 'ASC')->get(); 
       
-    return view('pages.work-samples')->with(
+    return view('pages.islerimiz')->with(
       [
         'filters' => $filters , 
         'filters_count' => $filters_count , 
@@ -204,9 +205,9 @@ class SiteController extends Controller
       $receiver_contactus_email_address = 'm.esteghamatdba@gmail.com';
     }
 
-    Mail::to($receiver_contactus_email_address)->send(new SendMail($data));
+    // Mail::to($receiver_contactus_email_address)->send(new SendMail($data));
 
-    return back()->with('success' , 'Bizimle iletişime geçtiğiniz için teşekkürler.');
+    return back();//->with('success' , 'Bizimle iletişime geçtiğiniz için teşekkürler.');
     // return redirect('/contact')->with( 'flash_message_success' , 'mesajınız "' . $request['input_contactus_message_subject'].'" başarıyla gönderildi.');;
 
   }

@@ -12,10 +12,10 @@
                         {{ $contentitem->contentitem_title_description }}
                     </p>
                     <br>
-                    <a href="{{ url('blog/blogdetails/'.$contentitem->contentitem_slug) }}">Devamını Oku   <i class="fas fa-long-arrow-alt-right fa-sm"></i></a>
+                    <a href="{{ url('blog/'.$contentitem->contentitem_slug) }}">Devamını Oku   <i class="fas fa-long-arrow-alt-right fa-sm"></i></a>
                 </div>
             </div>
         @endforeach
         </section>
-
+ 
 @endsection

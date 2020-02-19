@@ -180,7 +180,7 @@
                     <?php
                     $i=1;
                     ?>
-                    <li><a class="btn active" data-filter="all" href="">HEPSI</a></li>
+                    <li><a class="btn active2" data-filter="all" href="">HEPSI</a></li>
                     <li></li>
                     @foreach($filters as $filter)
                       <li><a class="btn" data-filter="{{ $filter->filter_slug }}" href="#">{{ $filter->filter_name }}</a></li>
@@ -283,31 +283,22 @@
                     <div class="swiper-slide">
                         <span>
                             <div>
-                                <!-- <h5>GRAFİK TASARIM</h5> -->
-                                <h5>{{ $contentitem->contentitem_title }}</h5>
+                                <h4>{{ $contentitem->contentitem_title }}</h4>
                             </div>
                             <div>
-                                <!-- <h6>Alanınıza özel kreatif grafik çalışmaları,
-                                    animasyonlar, vektörel çalışmalar</h6> -->
-                                <h6>
-                                  <?php 
-                                    echo(nl2br($contentitem->contentitem_title_description));
-                                  ?>  
-                                </h6>
+                                  <h5>
+                                    <?php 
+                                      echo(nl2br($contentitem->contentitem_title_description));
+                                    ?>  
+                                  </h5>  
                             </div>
                             <div class="vertical-line"></div>
                             <div>
-                                <!-- <p>Logo, kartvizit, antetli kağıt,
-                                    ajanda, kalem gibi ürünler
-                                    tasarlar ve sizin için kurumsal kimlik
-                                    oluştururuz. Sosyal medya tasarımları,
-                                    afiş ve broşür tasarımları hazırlıyoruz.
-                                </p> -->
                                 <p>
                                   <?php 
                                       echo(nl2br($contentitem->contentitem_description));
                                     ?>  
-                                  </p>
+                                </p>
                             </div>
                         </span>
                     </div>
@@ -416,7 +407,7 @@
                     <h1><span>{{ isset($contentheads_blog->contenthead_title) ? $contentheads_blog->contenthead_title : 'Blog' }}</span></h1>
                 </div>
                 <div>
-                    <h6>{{ isset($contentheads_blog->contenthead_title_description) ? $contentheads_blog->contenthead_title_description : '' }}</h6>
+                    <h4>{{ isset($contentheads_blog->contenthead_title_description) ? $contentheads_blog->contenthead_title_description : '' }}</h4>
                 </div>
             </div>
             <div class="blog-slider">
@@ -428,12 +419,13 @@
                                 {
                                     return $item;
                                 }
-                        });
+                        }); 
                     ?> 
                     @foreach($contentitems_blogs as $contentitem)
                         <div class="swiper-slide">
                             <div class="swipe">
                                 <img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt="">
+                                <a href="{{ URL::to('/') }}/blog/{{ isset($contentitem->contentitem_slug) ? $contentitem->contentitem_slug : '' }}">
                                 <div class="swipe-content">
                                     <div class="date">
                                         <h5>{{ isset($contentitem->contentitem_title) ? $contentitem->contentitem_title : '' }}</h5>
@@ -452,74 +444,24 @@
                             </div>
                         </div>
                     @endforeach    
+
                     <!-- <div class="swiper-slide">
                         <div class="swipe">
-                            <div class="swipe-content">
-                                <div class="date">
-                                    <h5> 17 temmuz 2019</h5>
+                            <img src="./dha-images/dijitalrecete1.jpg" alt="">
+                            <a href="./pages/blogs/ads-seo.html">
+                                <div class="swipe-content">
+                                    <div class="date">
+                                        <h5> 17 temmuz 2019</h5>
+                                    </div>
+                                    <div>
+                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+                                    <div><i class="fas fa-angle-right fa-lg"></i></div>
                                 </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                                </div>
-                                <div><i class="fas fa-angle-right fa-lg"></i></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="swipe">
-                            <div class="swipe-content">
-                                <div class="date">
-                                    <h5> 17 temmuz 2019</h5>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                                </div>
-                                <div><i class="fas fa-angle-right fa-lg"></i></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="swipe">
-                            <div class="swipe-content">
-                                <div class="date">
-                                    <h5> 17 temmuz 2019</h5>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                                </div>
-                                <div><i class="fas fa-angle-right fa-lg"></i></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="swipe">
-                            <div class="swipe-content">
-                                <div class="date">
-                                    <h5> 17 temmuz 2019</h5>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                                </div>
-                                <div><i class="fas fa-angle-right fa-lg"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="swipe">
-                            <div class="swipe-content">
-                                <div class="date">
-                                    <h5> 17 temmuz 2019</h5>
-                                </div>
-                                <div>
-                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                                </div>
-                                <div><i class="fas fa-angle-right fa-lg"></i></div>
-                            </div>
+                            </a>
                         </div>
                     </div> -->
+
                 </div>
                 <div class="swiper-pagination"></div>
 
@@ -560,7 +502,7 @@
                         });
                     ?> 
                     @foreach($contentheads_referanslar as $contentitem)                    
-                        <div class="swiper-slide"><a href=""><img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt=""></a></div>
+                        <div class="swiper-slide"><a href="{{ $contentitem->contentitem_url }}"><img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt=""></a></div>
                     @endforeach
                     <!-- <div class="swiper-slide"><img src="" alt=""></div>
                     <div class="swiper-slide"><img src="" alt=""></div>

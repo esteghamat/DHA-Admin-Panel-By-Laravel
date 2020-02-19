@@ -20,7 +20,7 @@
 
 @yield('content')
 
-@include ("layouts.siteLayouts.site_footer" )        
+@include ("layouts.siteLayouts.site_footer" )
 
 </div>
 

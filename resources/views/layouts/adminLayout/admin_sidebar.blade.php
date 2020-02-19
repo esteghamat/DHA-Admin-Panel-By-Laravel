@@ -25,6 +25,8 @@
                           </ul>
                       </li>
 
+                      <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('admin/footer') }}" aria-expanded="false" id="sidebar_menu_contentitem"><i class="mdi mdi-view-list"></i><span class="hide-menu">Sayfa altbilgisi</span></a></li>
+
                       <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-buttons.html" aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">Buttons</span></a></li>
                       <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Icons </span></a>
                           <ul aria-expanded="false" class="collapse  first-level">

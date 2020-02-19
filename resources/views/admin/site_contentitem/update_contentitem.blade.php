@@ -104,7 +104,7 @@
                                           </div>
                                     </div>
                                     <div class="form-group row">
-                                      <label for="input_contentitem_title_description" class="col-sm-3 text-right control-label col-form-label">Başlık açıklaması</label>
+                                      <label for="input_contentitem_title_description" class="col-sm-3 text-right control-label col-form-label">Kısa Açıklama</label>
                                       <div class="col-sm-9">
                                           <textarea class="form-control" name="input_contentitem_title_description" id="input_contentitem_title_description" placeholder="İş açıklaması" >{{ $data->contentitem_title_description }}</textarea>
                                           <span id="contentitemTitleDesc_msg"></span>
