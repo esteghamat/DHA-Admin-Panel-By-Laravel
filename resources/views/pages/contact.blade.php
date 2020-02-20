@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="contant-mean">
+    <div class="contact-mean">
         <div class="contact-header">
             <h1>Randevu</h1>
             <h6>Randevu için bilgileriniz ekleyin, bize göderin. Size enuygun zamanı belirleyelim</h6>

@@ -394,12 +394,13 @@ $(document).ready(function() {
         {
             // alert('You pressed a "enter" key in textbox');	
             var site_url = window.location.origin;
+            var site_url = site_url ;//+ up_site;
             var id = $(this).data("id");
             var new_order = $(this).val();
             var site_content_type_id = $(this).data("contenttype_id");
             var contetnttype_slug = $(this).data("contetnttype_slug");
             // alert(contetnttype_slug);
-            reOrder_url = '/admin/reorder_contentitem';
+            reOrder_url = up_site + '/admin/reorder_contentitem';
 
             $.ajaxSetup({
                 headers: {
@@ -419,7 +420,7 @@ $(document).ready(function() {
                 success: function(res) {
                     // alert('res = ' + res);
                     var url_contentitem_slug = '/contentitem/' + contetnttype_slug;
-                    window.location.href = site_url + url_contentitem_slug;
+                    window.location.href = site_url + up_site + url_contentitem_slug;
                 },
                 fail: function() {
                     alert('fail');

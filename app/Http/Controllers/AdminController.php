@@ -93,7 +93,13 @@ class AdminController extends Controller
     
     return redirect('/admin')->with( 'flash_message_success' , 'lütfen giriş yapın');
 
-}
+  }
+
+
+    public function registerRedirect()
+    {
+      return redirect('/admin/register');
+    }
 
     public function dashboard()
     {

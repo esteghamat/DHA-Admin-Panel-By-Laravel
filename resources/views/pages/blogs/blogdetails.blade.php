@@ -35,7 +35,7 @@
                 @foreach($contentitems as $contentitem)  
                     <div>
                         <div><img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_image_name	}}" alt=""></div>
-                        <div><a href="/blog/{{ $contentitem->contentitem_slug }}">{{ $contentitem->contentitem_title }}</a></div>
+                        <div><a href="{{ URL::to('/') }}/blog/{{ $contentitem->contentitem_slug }}">{{ $contentitem->contentitem_title }}</a></div>
                     </div>
                 @endforeach
                 <div class="right-sm">

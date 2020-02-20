@@ -46,7 +46,8 @@
                           ?>  
                         </P>    
                     </div>
-                    <div><button>DAHA FAZLASI</button></div>
+                    <div><a href="/biz-kimiz"><button> DAHA FAZLASI</button></a></div>
+                    <!-- <div><button>DAHA FAZLASI</button></div> -->
                 </div>
             </section>
         </header>

@@ -13,6 +13,9 @@ use App\Site_Contactus_Message;
 use App\Footer;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class SiteController extends Controller
 {

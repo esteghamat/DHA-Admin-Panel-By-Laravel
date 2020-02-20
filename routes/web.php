@@ -53,6 +53,8 @@ Auth::routes();
 // Route::post('/admin/register', 'Auth\RegisterController@register');
 Route::get('/admin/register', 'AdminController@register');
 Route::post('/admin/register', 'AdminController@register');
+Route::post('/register', 'AdminController@registerRedirect');
+
 
 Route::get('/admin/dashboard', 'AdminController@dashboard');
 Route::get('/admin/settings', 'AdminController@settings');
