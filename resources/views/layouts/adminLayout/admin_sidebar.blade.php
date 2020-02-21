@@ -12,16 +12,16 @@
                       <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('marka') }}" aria-expanded="false" id="sidebar_menu_makra"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Markalar</span></a></li>
                       <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('category') }}" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Kategoriler</span></a></li> -->
                       <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('admin/filter') }}" aria-expanded="false" id="sidebar_menu_filter"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Filterler</span></a></li>
-                      <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('admin/contenttype') }}" aria-expanded="false" id="sidebar_menu_contenttype"><i class="mdi mdi-bulletin-board"></i><span class="hide-menu">İçerik türü</span></a></li>
                       <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('portfolio') }}" aria-expanded="false" id="sidebar_menu_portfolio"><i class="mdi mdi-border-inside"></i><span class="hide-menu">İşlerimiz</span></a></li> -->
-                      <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('admin/index_gallery') }}" aria-expanded="false" id="sidebar_menu_gallery"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Galeriler</span></a></li>
+                      <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('admin/index_gallery') }}" aria-expanded="false" id="sidebar_menu_gallery"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Galeriler</span></a></li> -->
                       <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('contenthead') }}" aria-expanded="false" id="sidebar_menu_contenthead"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">Site ana içerikleri</span></a></li>
                       <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url('contentitem') }}" aria-expanded="false" id="sidebar_menu_contentitem"><i class="mdi mdi-view-list"></i><span class="hide-menu">Site öğeleri içeriği</span></a></li>
 
                       <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-cog"></i><span class="hide-menu">Sistem ayarları </span></a>
                           <ul aria-expanded="false" class="collapse  first-level">
-                              <li class="sidebar-item"><a href="{{ url('admin/configtype') }}" class="sidebar-link"><i class="fas fa-qrcode"></i><span class="hide-menu"> Ayar türleri </span></a></li>
-                              <li class="sidebar-item"><a href="{{ url('admin/config') }}" class="sidebar-link"><i class="fas fa-qrcode"></i><span class="hide-menu"> Ayarlar </span></a></li>
+                              <li class="sidebar-item"><a href="{{ url('admin/contenttype') }}" class="sidebar-link"><i class="mdi mdi-bulletin-board"></i><span class="hide-menu">İçerik türü</span></a></li>
+                              <li class="sidebar-item"><a href="{{ url('admin/configtype') }}"  class="sidebar-link"><i class="fas fa-qrcode"></i><span class="hide-menu"> Ayar türleri </span></a></li>
+                              <li class="sidebar-item"><a href="{{ url('admin/config') }}"      class="sidebar-link"><i class="fas fa-qrcode"></i><span class="hide-menu"> Ayarlar </span></a></li>
                           </ul>
                       </li>
 
