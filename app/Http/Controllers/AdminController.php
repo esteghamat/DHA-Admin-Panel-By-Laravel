@@ -52,14 +52,15 @@ class AdminController extends Controller
         {
             return view('admin.admin_login');
         }
-    }
+    } 
 
     public function register(Request $request)
     {
       if(Session::has('adminSession'))
       {
-          return view('admin.dashboard'); 
+        return redirect('/admin')->with( 'flash_message_error' , 'Kayıt olmak istiyorsanız, önce çıkış yapmalısınız!!');
       }
+
       if($request->isMethod('get'))
       {
         return view('admin.admin_register');
@@ -112,38 +113,6 @@ class AdminController extends Controller
             return redirect('/admin')->with( 'flash_message_error' , 'Please login to access dashboard!!');
         }
     }
-
-    // public function loadContenttype()
-    // {
-    //   $contenttype = Site_Content_Type::orderBy('id', 'ASC')->first();
-    //   // echo '<pre>';
-    //   // print_r($contenttype);
-    //   // die;    
-    //   if($contenttype)
-    //   {
-    //     echo '<pre>';
-    //     print_r($contenttype);
-    //     die;    
-    //     return response([
-    //       'success'=>'success',
-    //       'contenttype_id'=>$contenttype->id,
-    //       'contenttype_title'=>$contenttype->contenttype_title,
-    //       'contenttype_slug'=>$contenttype->contenttype_slug,
-    //       'message'=>'İlk içerik türü bulur.'
-    //       ]); 
-    //   }
-    //   else
-    //   {
-    //     return response([
-    //       'success'=>'fail',
-    //       'contenttype_id'=>0,
-    //       'contenttype_title'=>'',
-    //       'contenttype_slug'=>'',
-    //       'message'=>'Hiçbir içerik türü yok. Lütfen önce içerik türü ekleyin.'
-    //       ]); 
-    //   }
-
-    // }
 
     public function settings()
     {
@@ -218,4 +187,17 @@ class AdminController extends Controller
         Session()->flush();
         return redirect('/admin')->with( 'flash_message_success' , 'Logout Successfuly!!');
     }
+
+    public function userAdminAccess()
+    {
+      if(!Session::has('adminSession'))
+      {
+        return redirect('/admin')->with( 'flash_message_error' , 'Please login to access dashboard!!');
+      }
+      
+      $data = User::paginate(10);
+      return view('admin.user_admin_access' , compact('data'))->with('i' , (request()->input('page' , 1) -1)*10);
+
+    }
+
 }

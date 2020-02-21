@@ -38,6 +38,15 @@
                     <div class="text-center p-t-20 p-b-20">
                         <span class="db"><img src="{{ asset(config('constants.backend_address').'/assets/images/logo.png') }}" alt="logo" /></span>
                     </div>
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <!-- Form -->
                     @if(Session::has('flash_message_error'))
                         {{-- {!! session('flash_message_error') !!} --}}
@@ -143,5 +152,5 @@
     $(".preloader").fadeOut();
     </script>
 </body>
-
+ 
 </html>
