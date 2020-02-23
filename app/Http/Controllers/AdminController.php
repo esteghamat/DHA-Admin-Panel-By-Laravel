@@ -200,4 +200,24 @@ class AdminController extends Controller
 
     }
 
+    public function grantAdminAccess(Request $request)
+    {
+      $data = User::where('id' , $request['user_id'])->first();
+      if($request['isadmin']==1)
+      {
+        $data->admin = 0;
+        $newIsAdmin = 0;
+      }
+      else //
+      {
+        $data->admin = 1;
+        $newIsAdmin = 1;
+      }
+      $data->save();
+      return response([
+          'success'=>'success',
+          'newIsAdmin'=>$newIsAdmin,
+          ]);
+    }
+
 }

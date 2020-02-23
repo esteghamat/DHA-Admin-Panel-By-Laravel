@@ -64,11 +64,15 @@
                                 <tr id="tr_{{$row->id}}">
                                     <td style="vertical-align: middle;padding:5px">{{ $row->name }}</td>
                                     <td style="vertical-align: middle;padding:5px">{{ $row->email }}</td>
-                                    <td style="vertical-align: middle;padding:5px;text-align:center">{{ $row->admin }}</td>
+                                    <td style="vertical-align: middle;padding:5px;text-align:center" id="is_admin{{ $row->id }}">{{ $row->admin }}</td>
                                     <td style="vertical-align: middle;padding:5px;text-align:center">
-                                      <a href="{{ url('marka/'.$row->marka_slug) }}" class="btn btn-info" style="padding:3px;">
-                                      <i class="fas fa-street-view" style="color:gold;"></i>
-                                      </a>
+                                        <button type="button" class="btn btn-info user_grant_admin_access" 
+                                                id="user_grant_admin_access{{$row->id}}" name="user_grant_admin_access{{$row->id}}" 
+                                                data-id="{{$row->id}}" 
+                                                data-isadmin="{{$row->admin}}" 
+                                                style="padding:3px">
+                                                <i class="fas fa-street-view" style="color:gold;"></i>
+                                        </button> 
                                     </td>
                                     <td style="vertical-align: middle;padding:5px;text-align:center">
                                         <button type="button" class="transparent_button filter_delete_button" 

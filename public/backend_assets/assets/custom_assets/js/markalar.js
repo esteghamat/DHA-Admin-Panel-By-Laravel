@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  var frontend_address = '/frontend_assets';
-  var backend_address  = '/backend_assets';
-  var up_site = '';
-  // var up_site = '/dhasite';
-  // var frontend_address = '/public/frontend_assets';
-  // var backend_address  = '/public/backend_assets';
+    var frontend_address = '/frontend_assets';
+    var backend_address = '/backend_assets';
+    var up_site = '';
+    // var up_site = '/dhasite';
+    // var frontend_address = '/public/frontend_assets';
+    // var backend_address  = '/public/backend_assets';
 
     // *****************  input_image / change ***************** 
     $('.input_image_file').change(function() {
@@ -23,7 +23,7 @@ $(document).ready(function() {
             $('.preview_image_file').attr('src', site_url + backend_address + '/assets/images/no_preview.jpg');
         }
     });
- 
+
     // *****************  input_logo_image / change ***************** 
     $('.input_logo_image_file').change(function() {
         var site_url = window.location.origin;
@@ -394,7 +394,7 @@ $(document).ready(function() {
         {
             // alert('You pressed a "enter" key in textbox');	
             var site_url = window.location.origin;
-            var site_url = site_url ;//+ up_site;
+            var site_url = site_url; //+ up_site;
             var id = $(this).data("id");
             var new_order = $(this).val();
             var site_content_type_id = $(this).data("contenttype_id");
@@ -430,5 +430,37 @@ $(document).ready(function() {
         event.stopPropagation();
     });
 
+    $('.user_grant_admin_access').on('click', function(event) {
+        event.preventDefault();
+        var user_id = $(this).data('id');
+        var isadmin = $(this).data('isadmin');
+        var grant_admin_access_url = '/admin/user-admin-access/grant_admin_access';
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        }); //$.ajaxSetup
+        $.ajax({
+            url: grant_admin_access_url,
+            type: 'POST',
+            data: {
+                "_token": $('#token').val(),
+                user_id: user_id,
+                isadmin: isadmin,
+            },
+            success: function(res) {
+                if ((res['success']) === 'success') //
+                {
+                    var locator = "#is_admin" + user_id;
+                    $(locator).text('');
+                    $(locator).text(res['newIsAdmin']);
+                    var button_clicked = '#' + 'user_grant_admin_access' + user_id;
+                    $(button_clicked).data('isadmin', res['newIsAdmin']);
+                }
+            }, //success : function(res)
+            fail: function() {}
+        });
+
+    });
 
 });

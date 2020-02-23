@@ -58,6 +58,7 @@ Route::post('/register', 'AdminController@registerRedirect');
 Route::get('/admin/dashboard', 'AdminController@dashboard');
 Route::get('/admin/settings', 'AdminController@settings');
 Route::get('/admin/user-admin-access', 'AdminController@userAdminAccess');
+Route::post('/admin/user-admin-access/grant_admin_access', 'AdminController@grantAdminAccess');
 Route::get('/admin/check_password', 'AdminController@check_password');
 Route::post('/admin/update_password', 'AdminController@update_password');
 Route::get('/admin/load_contenttype', 'AdminController@loadContenttype'); 
