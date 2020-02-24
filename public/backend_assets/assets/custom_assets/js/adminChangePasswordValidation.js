@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
     $('#new_pwd').focus(function() {
-        var up_site = '';
-        // var up_site = '/dhasite';
+        // var up_site = '';
+        var up_site = '/dhasite';
         var current_pwd = $('#current_pwd').val();
         //alert(current_pwd);
         url_changepass = up_site + '/admin/check_password';

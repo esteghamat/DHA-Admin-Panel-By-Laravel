@@ -13,9 +13,6 @@ use App\Site_Contactus_Message;
 use App\Footer;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 
 class SiteController extends Controller
 {
@@ -208,7 +205,7 @@ class SiteController extends Controller
       $receiver_contactus_email_address = 'm.esteghamatdba@gmail.com';
     }
 
-    Mail::to($receiver_contactus_email_address)->send(new SendMail($data));
+	Mail::to($receiver_contactus_email_address)->send(new SendMail($data));
 
     return back();//->with('success' , 'Bizimle iletişime geçtiğiniz için teşekkürler.');
     // return redirect('/contact')->with( 'flash_message_success' , 'mesajınız "' . $request['input_contactus_message_subject'].'" başarıyla gönderildi.');;

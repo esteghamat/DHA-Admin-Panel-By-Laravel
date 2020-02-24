@@ -1,10 +1,10 @@
 $(document).ready(function() {
-    var frontend_address = '/frontend_assets';
-    var backend_address = '/backend_assets';
-    var up_site = '';
-    // var up_site = '/dhasite';
-    // var frontend_address = '/public/frontend_assets';
-    // var backend_address  = '/public/backend_assets';
+    // var frontend_address = '/frontend_assets';
+    // var backend_address = '/backend_assets';
+    // var up_site = '';
+    var up_site = '/dhasite';
+    var frontend_address = '/public/frontend_assets';
+    var backend_address  = '/public/backend_assets';
 
     // *****************  input_image / change ***************** 
     $('.input_image_file').change(function() {

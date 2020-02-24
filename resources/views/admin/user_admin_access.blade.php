@@ -75,11 +75,11 @@
                                         </button> 
                                     </td>
                                     <td style="vertical-align: middle;padding:5px;text-align:center">
-                                        <button type="button" class="transparent_button filter_delete_button" 
-                                                id="filter_delete_button{{$row->id}}" name="filter_delete_button{{$row->id}}" 
-                                                data-modelname="Filter" 
+                                        <button type="button" class="transparent_button user_delete_button" 
+                                                id="user_delete_button{{$row->id}}" name="user_delete_button{{$row->id}}" 
+                                                data-modelname="User" 
                                                 data-id="{{$row->id}}" style="padding:3px"
-                                                data-title="Filter sil" 
+                                                data-title="User sil" 
                                                 data-toggle="modal" 
                                                 data-target="#confirmDelete" 
                                                 >

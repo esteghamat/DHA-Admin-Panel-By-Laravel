@@ -46,6 +46,13 @@ Route::get('/admin/footer', 'FooterController@editFooter');
 Route::post('/admin/footer', 'FooterController@updateFooter');
 
 // ********************************  Admin ********************************
+Route::get('/clear-cache', function() {
+    Artisan::call('config:cache');
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    return "Cache is cleared";
+});
+
 Route::match(['get' , 'post'] , '/admin', 'AdminController@login');
 Route::get('/logout', 'AdminController@logout');
 Auth::routes();
@@ -59,6 +66,8 @@ Route::get('/admin/dashboard', 'AdminController@dashboard');
 Route::get('/admin/settings', 'AdminController@settings');
 Route::get('/admin/user-admin-access', 'AdminController@userAdminAccess');
 Route::post('/admin/user-admin-access/grant_admin_access', 'AdminController@grantAdminAccess');
+Route::post('/admin/delete_possibility_user', 'AdminController@deletePassibilityUser');
+Route::post('/admin/delete_user', 'AdminController@deleteUser');
 Route::get('/admin/check_password', 'AdminController@check_password');
 Route::post('/admin/update_password', 'AdminController@update_password');
 Route::get('/admin/load_contenttype', 'AdminController@loadContenttype'); 
