@@ -58,7 +58,7 @@ return [
 
     'from' => [
         // 'address' => env('MAIL_FROM_ADDRESS', 'sm_iransoftware@yahoo.com'),
-        'address' => env('MAIL_FROM_ADDRESS', 'noreply@caddemedikal.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'mohammad.esteghamat@fikibuzz.com'),
         'name' => env('MAIL_FROM_NAME', 'noreplay f.'),
     ],
 
