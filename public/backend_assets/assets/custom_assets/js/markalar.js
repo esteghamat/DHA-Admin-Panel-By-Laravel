@@ -289,7 +289,8 @@ $(document).ready(function() {
 
     // *****************  function check_delete_possibility ***************** 
     function check_delete_possibility(modelname, modelid, callback) {
-        var delete_url = '/admin/delete_possibility_' + modelname.toLowerCase();
+        var site_url = window.location.origin;
+        var delete_url = up_site +'/admin/delete_possibility_' + modelname.toLowerCase();
         // alert(delete_url);
         // alert('modelid = ' + modelid);
         // alert('modelname = ' + modelname);
@@ -320,10 +321,11 @@ $(document).ready(function() {
 
     // *****************  function send_delete_request_by_ajax ***************** 
     function send_delete_request_by_ajax(delete_button) {
+        var site_url = window.location.origin;
         var model_id = $(delete_button).data('id');
         var model_name = $(delete_button).data('modelname');
         model_name = model_name.toLowerCase();
-        var delete_url = '/admin/delete_' + model_name;
+        var delete_url =  up_site +'/admin/delete_' + model_name;
         // alert(delete_url);
         $.ajaxSetup({
             headers: {
@@ -434,7 +436,8 @@ $(document).ready(function() {
         event.preventDefault();
         var user_id = $(this).data('id');
         var isadmin = $(this).data('isadmin');
-        var grant_admin_access_url = '/admin/user-admin-access/grant_admin_access';
+        var site_url = window.location.origin;
+        var grant_admin_access_url = up_site + '/admin/user-admin-access/grant_admin_access';
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

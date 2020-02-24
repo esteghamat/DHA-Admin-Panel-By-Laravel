@@ -85,8 +85,8 @@
     <!-- <script src="{{ asset(Config::get('constants.backend_address').'/assets/libs/select2/dist/js/select2.full.min.js') }}"></script> -->
     <script src="{{ asset(Config::get('constants.backend_address').'/assets/libs/select2/dist/js/select2.min.js') }}"></script>
     
-    <script src="{{ asset(Config::get('constants.backend_address').'/assets/custom_assets/js/adminChangePasswordValidation.js') }}"></script>
     <script src="{{ asset(Config::get('constants.backend_address').'/assets/custom_assets/js/markalar.js') }}"></script>
+    <script src="{{ asset(Config::get('constants.backend_address').'/assets/custom_assets/js/adminChangePasswordValidation.js') }}"></script>
 
     <script>
       //***********************************//
