@@ -29,7 +29,8 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailtrap.io'),
+    'host' => env('MAIL_HOST', 'mail.caddemedikal.com'),
+    //'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +43,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 2525),
+    'port' => env('MAIL_PORT', 587),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +57,9 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'sm_iransoftware@yahoo.com'),
-        'name' => env('MAIL_FROM_NAME', 'fikirbuzz_noreply'),
+        // 'address' => env('MAIL_FROM_ADDRESS', 'sm_iransoftware@yahoo.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'noreply@caddemedikal.com'),
+        'name' => env('MAIL_FROM_NAME', 'noreplay f.'),
     ],
 
     /*
@@ -84,9 +86,17 @@ return [
     |
     */
 
-    'username' => env('9b09f03b867fc2'),
+    // 'username' => env('9b09f03b867fc2'),
 
-    'password' => env('5f8ea07c4cc053'),
+    // 'password' => env('5f8ea07c4cc053'),
+
+    // 'username' => env('m.esteghamatdba@gmail.com'),
+
+    // 'password' => env('Estegh@m@tdb@'),
+
+	'username' => env('MAIL_USERNAME'),
+	
+	'password' => env('MAIL_PASSWORD'),	
 
     /*
     |--------------------------------------------------------------------------
@@ -132,5 +142,14 @@ return [
     */
 
     'log_channel' => env('MAIL_LOG_CHANNEL'),
+
+    
+	'stream' => [
+      'ssl' => [
+          'allow_self_signed' => true,
+          'verify_peer' => false,
+          'verify_peer_name' => false,
+      ],
+  ],
 
 ];
