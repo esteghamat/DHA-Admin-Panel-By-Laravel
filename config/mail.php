@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'mail.caddemedikal.com'),
+    'host' => env('MAIL_HOST', 'mail.fikirbuzz.com'),
     //'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
