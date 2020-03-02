@@ -10,6 +10,7 @@
   }
  .fs-sm{
      font-size: 14px;
+     color: black;
  }
  .fs-m{
      font-size: 18px;
@@ -37,7 +38,7 @@
 
 ::-webkit-scrollbar {
     z-index: 100;
-    background-color: whitesmoke;
+    background-color: white;
     width: 10px;
 }
 
@@ -115,14 +116,50 @@ body {
 }
 
 /* NAVBAR******************************************************************** ******************************/
+.social-fixed {
+    position: fixed;
+    display: grid;
+    z-index: 99;
+    bottom: 200px;
+    left: 10px;
+}
+.fix-social {
+    font-size: 24px;
+    color: black;
+    transition: 1s ease;
+    margin: 10px;
+}
+.heart{
+    max-width: 100px;
+    padding: 10px;
+}
+.fix-social:hover {
+    transform: rotate(-90deg);
+   transition: 1s ease;
+   color:#27A3A8;
 
+}
 .navigation {
     display: flex;
     justify-content: space-around;
     /* background-color: seagreen; */
     width: 100%;
-    height: 7vh;
+    height: 10vh;
     margin-top: 20px;
+}
+.navigation .logo {
+    width: 300px;
+    height: auto;
+    position: relative;
+
+}
+.navigation .logo a img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0em;
+    left: 0;
+    object-fit: cover;
 }
 
 /* .navigation .logo a img{
@@ -139,15 +176,19 @@ body {
     line-height: 7vh;
     margin-left: 20px;
 }
-
+.site-logo {
+    max-width: 270px;
+    padding-top: 12px;
+}
 .nav-links li a {
     text-decoration: none;
     color: black;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: .8vw;
+    font-weight: 100;
+    font-size: 12px;
     position: relative;
     display: inline-block;
+    margin-top: 10px;
 }
 
 .nav-links li a::after {
@@ -186,8 +227,8 @@ header {
 
 .header {
     display: grid;
-    grid-template-columns: 60% 40%;
-    width: 90%;
+    grid-template-columns: 50% 50%;
+    width: 100%;
     margin-top: 30px;
     justify-self: center;
 
@@ -195,8 +236,7 @@ header {
 
 .header-left img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    padding-top: 80px;
 }
 
 .header-right {
@@ -204,19 +244,23 @@ header {
     justify-content: center;
     text-align: center;
     font-size: .7em;
+    color: black;
+    padding-top: 20px;
+    padding-right: 100px;
 }
 
 .header-right button {
-    padding: 5px 10px;
+    padding: 10px 20px;
     background-color: transparent;
-    border: 1px solid skyblue;
+    border: 2px solid #27A3A8;
     position: relative;
-    transition: background .5s ease-in-out;
+
     cursor: pointer;
 }
 
 .header-right button:hover {
     background-color: #27A3A8;
+    color: white;
 }
 
 /* edges******************************************************************************* */
@@ -226,11 +270,11 @@ header {
     position: absolute;
     top: 50%;
     left: 0;
-    width: 20px;
-    height: 1px;
-    /* border-bottom: 1px solid skyblue; */
+    width: 30px;
+    height: 2px;
+    /* border-bottom: 1px solid #27A3A8; */
     display: inline-block;
-    background-color: skyblue;
+    background-color: #27A3A8;
     transform: translate(-70%, -50%);
 }
 
@@ -240,22 +284,25 @@ header {
     position: absolute;
     top: 50%;
     right: 0;
-    width: 20px;
-    height: 1px;
-    /* border-bottom: 1px solid skyblue; */
+    width: 30px;
+    height: 2px;
+    /* border-bottom: 1px solid #27A3A8; */
     display: inline-block;
-    background-color: skyblue;
+    background-color: #27A3A8;
     transform: translate(70%, -50%);
 }
 
 .header-right h2 {
-    font-weight: 700;
+    font-weight: 300;
     letter-spacing: 1px;
-    border: 1px solid skyblue;
+    border: 2px solid #27A3A8;
     padding: 4px 0;
     position: relative;
 }
-
+.bordered {
+    padding: 0px 15px;
+    border: 2px solid #27A3A8;
+}
 .header-right h2::before {
     content: "";
     position: absolute;
@@ -267,7 +314,9 @@ header {
     background-color: white;
     transform: translate(-50%, -50%);
 }
-
+.foot-link > ul > li > a:hover {
+    color: white;
+}
 .header-right h2::after {
     content: "";
     position: absolute;
@@ -299,7 +348,7 @@ header {
 }
 
 .grid-container .container1 h1 {
-    color: whitesmoke;
+    color: white;
     font-weight: 700;
     position: relative;
     display: inline-block;
@@ -314,7 +363,7 @@ header {
     top: 0;
     height: 10px;
     width: 2px;
-    background-color: whitesmoke;
+    background-color: white;
     position: absolute;
 }
 
@@ -325,7 +374,7 @@ header {
     left: 0;
     width: 10px;
     height: 2px;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .grid-container .container1 h1::after {
@@ -334,7 +383,7 @@ header {
     top: 0;
     height: 10px;
     width: 2px;
-    background-color: whitesmoke;
+    background-color: white;
     position: absolute;
 }
 
@@ -345,16 +394,16 @@ header {
     right: 0;
     width: 10px;
     height: 2px;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 /* *********************************************************** */
 .grid-container p {
-    color: whitesmoke;
+    color: white;
 }
 
 .container1 {
-    width: 30%;
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
     padding-top: 80px;
@@ -377,22 +426,38 @@ header {
 .container2 div {
     text-align: center;
     margin: 10px;
+    width: 100%;
 }
 
 .container2 div img {
     padding-bottom: 5px;
 }
-
+.box-link:hover{
+    text-decoration: none;
+}
+.box-link:hover .box-link-img{
+    transform: rotate(-180deg);
+    transition: 1s ease;
+}
+.box-link-img{
+    transition: 1s ease;
+}
 .container2 h1 {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
-    color: darkslategray;
+    color: black;
 }
 
 /* İŞLERİMİZ****************************************************************************************************** */
-
+.title-main {
+    font-weight: 300;
+    font-size: 2rem;
+}
+.digital > div > p > img {
+    display: none;
+}
 .works-1 {
-    width: 30%;
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
     padding-top: 120px;
@@ -416,7 +481,7 @@ header {
     top: 0;
     width: 2px;
     height: 8px;
-    background-color: deepskyblue;
+    background-color: #27A3A8;
 }
 
 .works-1 h1 span::before {
@@ -426,7 +491,7 @@ header {
     top: 0;
     width: 8px;
     height: 2px;
-    background-color: deepskyblue;
+    background-color: #27A3A8;
 }
 
 .works-1 h1::after {
@@ -436,7 +501,7 @@ header {
     top: 0;
     width: 2px;
     height: 8px;
-    background-color: deepskyblue;
+    background-color: #27A3A8;
 }
 
 .works-1 h1 span::after {
@@ -446,7 +511,7 @@ header {
     right: 0;
     width: 8px;
     height: 2px;
-    background-color: deepskyblue;
+    background-color: #27A3A8;
 }
 
 .works-2 {
@@ -568,15 +633,14 @@ header {
 }
 
 .digital-pros .digital {
-    margin-left: 50%;
-    display: inline-block;
-    transform: translate(-50%);
+text-align: center;
     margin-bottom: 100px;
 }
 
 .digital div p {
-    float: right;
-    font-size: 1rem;
+ width: 80% !important;
+ margin:auto !important;
+  
 }
 
 .digital h1 {
@@ -757,7 +821,7 @@ header {
     left: 0;
     width: 2px;
     height: 10px;
-    background-color: whitesmoke;
+    background-color: white;
 
 }
 
@@ -768,7 +832,7 @@ header {
     left: 0;
     width: 10px;
     height: 2px;
-    background-color: whitesmoke;
+    background-color: white;
 
 }
 
@@ -779,7 +843,7 @@ header {
     right: 0;
     width: 2px;
     height: 10px;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .blog .blog-header div h1 span::after {
@@ -789,7 +853,7 @@ header {
     right: 0;
     width: 10px;
     height: 2px;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 /* **************************************************************************************************** */
@@ -812,7 +876,7 @@ header {
 .blog-slider .swiper-slide .swipe {
     /* width: 230px; */
     height: 300px;
-    background-color: whitesmoke;
+    background-color: white;
     margin-left: 0px;
     margin-right: 0px;
 }
@@ -844,8 +908,8 @@ header {
     padding: 10px;
     position: absolute;
     bottom: 0;
-    background-color: darkslategray ;
-    color: whitesmoke;
+    background-color: black ;
+    color: white;
     width: 100%;
     font-weight: 400;
 }
@@ -858,7 +922,7 @@ header {
 
 .blog .blog-slider .swipe .swipe-content h5 {
     margin-bottom: 0px;
-    color: whitesmoke;
+    color: white;
 }
 
 .blog .blog-slider .swipe .swipe-content p {
@@ -884,7 +948,7 @@ header {
     margin-left: 50%;
     display: inline-block;
     transform: translate(-50%);
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .refer-header h1 {
@@ -939,7 +1003,7 @@ header {
 .ref-slider .swiper-wrapper .swiper-slide{
     width: 300px;
     height: 200px;
-    background-color: gray;
+
     
 }
 .refer .ref-slider {
@@ -954,15 +1018,12 @@ header {
     position: relative;
 }
 .refer .ref-slider .swiper-wrapper div a img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
+    
 }
 /* FOOTER************************************************************************ */
 .footer {
     /* margin-top: 100px; */
-    color: whitesmoke;
+    color: white;
     font-family: 'Open Sans', sans-serif;
     background: url(../dha-images/footer.png) no-repeat center center;
     background-size: 100% 100%;
@@ -987,12 +1048,12 @@ header {
 }
 
 .footer-top-left div i {
-    color: darkslategray;
+    color: black;
     margin-right: 9px;
 }
 
 .footer-top-left div {
-    color: whitesmoke;
+    color: white;
     font-weight: 700;
     cursor: pointer;
     margin-bottom: 3px;
@@ -1014,11 +1075,13 @@ header {
     width: 65%;
     height: auto;
 }
-
+.footer-bottom >nav >ul >li > a{
+    font-size: 14px !important;
+}
 .footer-bottom {
-    display: flex;
+    display: grid;
     justify-content: space-around;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 .footer-bottom-right {
@@ -1053,7 +1116,7 @@ header {
 }
 
 .footer-bottom-left i {
-    color: darkslategray;
+    color: black;
 }
 
 .footer-bottom-middle {
@@ -1062,29 +1125,33 @@ header {
 
 .footer-bottom-middle h5 {
     font-weight: 700;
-    color: whitesmoke;
+    color: white;
 }
 
 .footer-bottom-middle i {
     margin: 0 15px;
     border: 1px solid lightsteelblue;
     padding: 5px;
-    color: whitesmoke;
+    color: #27A3A8;
     text-decoration: none;
     transition: color .3s ease-in-out;
     box-shadow: inset 0px -5px 5px 4px rgba(0, 0, 0, .1);
     width: 30px;
     height: 30px;
     border-radius: 5px;
+    background-color: white;
 }
 
 .footer-bottom-middle i:hover {
-    background-color: whitesmoke;
-    color: #27A3A8;
+    background-color: transparent;
+    color: white;
 }
 
 .footer-bottom-right .foot-item1 p {
     margin: 0 0 0 0;
+}
+.locations:hover {
+    text-decoration: none;
 }
 
 .footer-bottom-right .foot-item2 li {
@@ -1094,7 +1161,7 @@ header {
 
 .footer-bottom-right .foot-item2 li a {
     text-decoration: none;
-    color: whitesmoke;
+    color: white;
 }
 
 .toggleclass {
@@ -1116,7 +1183,7 @@ header {
 }
 
 .website .whoweare div p {
-    color: whitesmoke;
+    color: white;
 }
 
 .website .whoweare div p::first-line {
@@ -1372,7 +1439,7 @@ header {
     bottom: 0;
 }
 .refsample div span i{
-    color:  whitesmoke;
+    color:  white;
     top: 50%;
     position: absolute;
     left: 50%;
@@ -1426,8 +1493,11 @@ header {
     transform: skew();
     font-weight: 900;
     transition: .2s ease-in-out;
+    color: #27A3A8 !important;
 }
-
+.works-2 ul li a:hover {
+    color: #27A3A8 !important;
+}
 .work-sample-header {
     margin-top: 50px;
     margin-left: 100px;
@@ -1572,7 +1642,7 @@ header {
     width: 400px;
     height: 50px;
     border-top: none;
-    border-bottom: 1px solid darkslategray;
+    border-bottom: 1px solid black;
     border-left: none;
     border-right: none;
     outline: none;
@@ -1634,7 +1704,7 @@ header {
     box-shadow: 0 0 7px 0 #27a3a8 inset, 0 0 2px 2px #27a3a8;
     border: 3px solid #27a3a8;
     background-color: #1cc6cc ;
-    color: whitesmoke;
+    color: white;
     font-size: .7rem;
     font-weight: 900;
 }
@@ -1694,21 +1764,15 @@ header {
     /* ********************************************************************************************************* */
 
     .website {
-        color: darkslategray !important;
+        color: black !important;
     }
 
     .hamburger {
         display: block;
     }
-
-    .navigation .logo {
-        width: 50%;
-        height: 30%;
-        margin-left: -130px;
-        margin-top: 10px;
-
+    .navigation{
+        margin-top: 0px;
     }
-
     .nav-links {
         display: none;
         width: 100%;
@@ -1731,7 +1795,7 @@ header {
     }
 
     .nav-links ul li a {
-        color: whitesmoke;
+        color: white;
         font-size: 1rem;
     }
 
@@ -1765,7 +1829,7 @@ header {
     }
 
     .grid-container .container1 h1 {
-        color: darkslategray;
+        color: black;
     }
 
     .grid-container .container1 h1::before {
@@ -1785,7 +1849,7 @@ header {
     }
 
     .grid-container .container1 p {
-        color: darkslategray;
+        color: black;
     }
 
     .grid-container .container2 {
@@ -1797,7 +1861,7 @@ header {
     }
 
     .grid-container .container2 div p {
-        color: darkslategray;
+        color: black;
         font-size: 1rem;
     }
 

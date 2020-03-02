@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -44,11 +44,11 @@ class SiteController extends Controller
   {
 
     $contentheads = Site_Content_Head::whereHas('site_content_type', function ($query) {
-        $query->where('contenttype_slug','=','biz_kimiz');
+        $query->where('contenttype_slug','=','biz-kimiz');
     })->first(); 
 
     $contentitems = Site_Content_Item::whereHas('site_content_type', function ($query) {
-      $query->where('contenttype_slug','=','biz_kimiz');
+      $query->where('contenttype_slug','=','biz-kimiz');
     })->orderBy('custom_order' , 'ASC')->get(); 
       
     return view('pages.biz-kimiz')->with(
@@ -81,11 +81,11 @@ class SiteController extends Controller
   {
 
     $contentheads = Site_Content_Head::whereHas('site_content_type', function ($query) {
-      $query->where('contenttype_slug','=','referenslar');
+      $query->where('contenttype_slug','=','referanslar');
     })->first(); 
 
     $contentitems = Site_Content_Item::whereHas('site_content_type', function ($query) {
-      $query->where('contenttype_slug','=','referenslar');
+      $query->where('contenttype_slug','=','referanslar');
     })->orderBy('custom_order' , 'ASC')->get(); 
       
     return view('pages.references')->with(

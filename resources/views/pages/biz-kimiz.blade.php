@@ -5,7 +5,7 @@
 
         <div id="who">
             <!-- <h1>Biz Kimiz?</h1> -->
-            <h1>{{ $contentheads->contenthead_title }}</h1>
+            <h1>{{ isset($contentheads->contenthead_title) ? $contentheads->contenthead_title : '' }}</h1>
         </div>
         <section class="whoweare">
             <div>
@@ -20,7 +20,16 @@
             </p> -->
             <p>
                 <?php 
-                    echo(nl2br($contentheads->contenthead_title_description));
+                    $biz_kimiz_contenthead_title_description = '';
+                    if(isset($contentheads->contenthead_title_description))
+                    {
+                      $biz_kimiz_contenthead_title_description = $contentheads->contenthead_title_description;
+                    }
+                    else
+                    {
+                      $biz_kimiz_contenthead_title_description = '';
+                    }
+                    echo(nl2br($biz_kimiz_contenthead_title_description));
                 ?>  
             </p>
             </div>
@@ -29,11 +38,20 @@
             @foreach($contentitems as $contentitem)
             <div>
                 <div><<img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_logo_image_name	}}" alt=""></div>
-                <div><h5>{{ $contentitem->contentitem_title }}</h5></div>
+                <div><h5>{{ isset($contentitem->contentitem_title) ? $contentitem->contentitem_title : '' }}</h5></div>
                 <div>
                   <p class="fs-sm">
                     <?php 
-                      echo(nl2br($contentitem->contentitem_title_description));
+                      $biz_kimiz_contentitem_title_description = '';
+                      if(isset($contentitem->contentitem_title_description))
+                      {
+                        $biz_kimiz_contentitem_title_description = $contentitem->contentitem_title_description;
+                      }
+                      else
+                      {
+                        $biz_kimiz_contentitem_title_description = '';
+                      }
+                      echo(nl2br($biz_kimiz_contentitem_title_description));
                     ?>  
                   </p>
                 </div>
@@ -70,5 +88,5 @@
                 </p></div>
             </div> -->
         </section>
-
+ 
 @endsection

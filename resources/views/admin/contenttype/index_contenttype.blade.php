@@ -80,7 +80,8 @@
                             </a>
                           </td>
                           <td style="vertical-align: middle;padding:5px;text-align:center">
-                              <a href="{{ url('admin/edit_row_contenttype'.$row->id) }}"  style="padding:3px"><i class="fas fa-edit" style="color:#2A8DF5;"></i></a>
+                              <!-- <a href="{{ url('admin/edit_row_contenttype'.$row->id) }}"  style="padding:3px"><i class="fas fa-edit" style="color:#2A8DF5;"></i></a> -->
+                              <a href=""  style="padding:3px"><i class="fas fa-edit" style="color:#2A8DF5;"></i></a>
                               <button type="button" class="transparent_button contenttype_delete_button" 
                                       id="contenttype_delete_button{{$row->id}}" name="contenttype_delete_button{{$row->id}}" 
                                       data-modelname="Site_Content_Type" 
@@ -88,6 +89,7 @@
                                       data-title="İçerik türünü sil" 
                                       data-toggle="modal" 
                                       data-target="#confirmDelete" 
+                                      disabled
                                       >
                                       <i class="far fa-trash-alt" style="color:red; padding:5px"></i></button> 
                           </td>
@@ -104,3 +106,4 @@
   <!-- ============================================================== -->
 
   @endsection
+  

@@ -16,62 +16,52 @@
                       else 
                         { $whatsapp_link = '905336131073'; } 
                     ?>
-                    <div class="fs-sm"><a style="text-decoration: none; color: whitesmoke;"
-                            href="https://api.whatsapp.com/send?phone={{$whatsapp_link}}&text=Merhaba"> <i
+                    <div class="fs-sm"><a style="text-decoration: none; color: whitesmoke;font-size: 16px;font-weight: 300;"
+                            href="https://api.whatsapp.com/send?phone={{$whatsapp_link}}&text=Merhaba hizmet kalemleriniz ile ilgili bilgi almak istiyorum"> <i
                                 class="fab fa-whatsapp"></i>{{isset($footer->whatsapp) ? $footer->whatsapp : '0533 613 1073666'}}</a></div>
-                    <div class="fs-sm"><a style="text-decoration: none; color: whitesmoke;" href="tel:+90216327048"><i
+                    <div class="fs-sm"><a style="text-decoration: none; color: whitesmoke;font-size: 16px;font-weight: 300;" href="tel:+902164281734"><i
                                 class="fas fa-phone-alt"></i>{{isset($footer->phone) ? $footer->phone : '0216 32 70 48'}}</a></div>
-                    <div class="fs-sm"><a style="text-decoration: none; color: whitesmoke;"
-                            href="mailto:{{isset($footer->email) ? $footer->email : 'info@digitalhealtagency.com'}}"><i class="far fa-envelope"></i>
+                    <div class="fs-sm"><a style="text-decoration: none; color: whitesmoke;font-size: 16px;font-weight: 300;"
+                            href="mailto:{{isset($footer->email) ? $footer->email : 'randevu@digitalhealthagency.com.tr'}}"><i class="far fa-envelope"></i>
                             {{isset($footer->email) ? $footer->email : 'info@digitalhealtagency.com'}}</a></div>
+                    <div class="fs-sm"><a style="text-decoration: none; color: whitesmoke;font-size: 16px;font-weight: 300;"
+                            href="https://www.google.com/maps/place/Fikirbuzz+Dijital+Pazarlama+ve+Reklam+Ajans%C4%B1/@41.008436,29.0365863,17z/data=!3m1!4b1!4m5!3m4!1s0x14cab81cc322d813:0x3a32083fb958bfc6!8m2!3d41.008432!4d29.038775"><i class="fas fa-map-marker-alt"></i>
+                              kroki için tıklayın</a></div>
+
                 </div>
                 <div class="footer-top-right">
-                    <a href=""><img src="{{ asset(config('constants.frontend_address').'/dha-images/Vector Smart Object copy 5.png') }}" alt=""></a>
+                   <div class="footer-bottom-middle footer-bottom-items" style="margin-right: 40px;">
+                    <div>
+                        <h5 style="font-weight: 300;">Sosyal Medya</h5>
+                    </div>
+                    <div class="footer-icons" >
+                      <a href="{{isset($footer->instagram) ? $footer->instagram : ''}}"><i class="fab fa-instagram"></i></a>
+                      <a href="{{isset($footer->linkedin) ? $footer->linkedin : ''}}"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="{{isset($footer->facebook) ? $footer->facebook : ''}}"><i class="fab fa-facebook-f"></i></a>
+                         <a href="{{isset($footer->facebook) ? $footer->facebook : ''}}"><i class="fab fa-twitter"></i></a>
+                        
+                        
+                        
+                    </div>
+                </div>
                 </div>
             </div>
             <hr>
             <div class="footer-bottom">
-                <div class="footer-bottom-left footer-bottom-items">
-                    <div><i class="fas fa-map-marker-alt"></i></div>
-                    <div>
-                        <p class="fs-sm">
-                          <?php
-                            if(isset($footer->address)) 
-                              { 
-                                echo(nl2br($footer->address));
-                              }  
-                            else 
-                              { 
-                          ?>
-                          Kosuyolu Mahallesi Ali Nazime Sk. <br>
-                              No 5/A Kadıkoy/İstanbul
-                          <?php } ?>    
-                        </p>
-                    </div>
-                </div>
-                <div class="footer-bottom-middle footer-bottom-items">
-                    <div>
-                        <h5>Sosyal Medyada Biz;</h5>
-                    </div>
-                    <div class="footer-icons">
-                        <a href="{{isset($footer->facebook) ? $footer->facebook : ''}}"><i class="fab fa-facebook-f"></i></a>
-                        <a href="{{isset($footer->twitter) ? $footer->twitter : ''}}"><i class="fab fa-twitter"></i></a>
-                        <a href="{{isset($footer->instagram) ? $footer->instagram : ''}}"><i class="fab fa-instagram"></i></a>
-                        <a href="{{isset($footer->linkedin) ? $footer->linkedin : ''}}"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="{{isset($footer->pinterest) ? $footer->pinterest : ''}}"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-                <div class="footer-bottom-right footer-bottom-items">
-                    <div class="foot-item1">
-                        <p class="fs-xs">2020 © FikirBuzz Agency Tum Hakları Saklıdır.</p>
-                    </div>
-                    <div class="foot-item2 fs-sm">
-                        <li><a href="{{isset($footer->kvkk_link) ? $footer->kvkk_link : ''}}">{{isset($footer->kvkk_title) ? $footer->kvkk_title : 'KVKK'}}</a></li>
-                        <li><a href="{{isset($footer->isortaklari_link) ? $footer->isortaklari_link : ''}}">{{isset($footer->isortaklari_title) ? $footer->isortaklari_title : 'İs ortakları'}}</a></li>
-                        <li><a href="{{isset($footer->partnerler_link) ? $footer->partnerler_link : ''}}">{{isset($footer->partnerler_title) ? $footer->partnerler_title : 'Partnerler'}}</a></li>
-                        <li><a href="{{isset($footer->kariyer_link) ? $footer->kariyer_link : ''}}">{{isset($footer->kariyer_title) ? $footer->kariyer_title : 'Kariyer'}}</a></li>
-                    </div>
-                    <div class="foot-item3"><img src="{{ asset(config('constants.frontend_address').'/dha-images/Vector Smart Object2.png') }}" alt=""></div>
-                </div>
+                 <nav class="navigation" style="margin-top: 0px!important;">
+           
+            <div class="nav-links foot-link">
+                <ul>
+                    <li><a href="{{ url('/') }}">ANASAYFA</a></li>
+                    <li><a href="{{ url('biz-kimiz') }}">BİZ KİMİZ</a></li>
+                    <li><a href="{{ url('dijital-recetemiz') }}">DİJİTAL HİZMETLER</a></li>
+                    <li><a href="{{ url('references') }}">TEDAVİ ETTİKLERİMİZ</a></li>
+                    <li><a href="{{ url('islerimiz') }}">İŞ ÖRNEKLERİ</a></li>
+                    <li><a href="{{ url('blog') }}">BLOG</a></li>
+                    <li ><a href="{{ url('contact') }}" class="bordered"><i class="fas fa-stethoscope" style="font-size: 16px;"></i>  RANDEVU</a></li>
+                </ul>    
+             </div>
+        </nav>
+               <a href="https://fikirbuzz.com" style="text-align: center;"><img style="width: 30px;margin:auto!important;" src="{{ asset(Config::get('constants.frontend_address').'/dha-images/fikirbuzz.png') }}" alt="">
             </div>
         </footer>

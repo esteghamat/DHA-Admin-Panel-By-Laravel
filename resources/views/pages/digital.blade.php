@@ -43,49 +43,4 @@
         </section>
         @endforeach
 
-        <!-- <section class="dcontainer">
-            <div>
-                <div><img src="{{ asset('frontend_assets/dha-images/dijitalrecete1.jpg') }}" alt=""></div>
-                <div><h3><span class="span1"><span class="span2">GRAFİK TASARIM</span></span></h3></div> 
-                <div>
-                    <p>Alanınıza özel kreatif grafik çalışmaları, animasyonlar, vektörel çalışmalar<br><br>
-                        Logo, kartvizit, antetli kağıt,<br>
-                        ajanda, kalem gibi ürünler<br>
-                        tasarlar ve sizin için kurumsal kimlik<br>
-                        oluştururuz. Sosyal medya tasarımları,<br>
-                        afiş ve broşür tasarımları hazırlıyoruz.<br>  
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section class="dcontainer">
-            <div>
-                <div><img src="{{ asset('frontend_assets/dha-images/dijitalrecete2.jpg') }}" alt=""></div>
-                <div><h3><span class="span1"><span class="span2">FOTOGRAF & VİDEO</span></span></h3></div> 
-                <div>
-                    <p>Arama motoru optimizasyonu, Dijital birliğin artması<br><br>
-                        Markanızın arama motorlarında daha<br>
-                        üst sıralarda çıkmasını sağlıyor,<br>
-                        dijital repütasyonunuzu yükseltiyoruz.<br> 
-                    </p>
-                </div>
-            </div>
-        </section>
-        <section class="dcontainer">
-            <div>
-                <div><img src="{{ asset('frontend_assets/dha-images/dijitalrecete3.jpg') }}" alt=""></div>
-                <div><h3><span class="span1"><span class="span2">GOOGLE ADS & SEO</span></span></h3></div> 
-                <div>
-                    <p> Konsept fotoğraf ve video çekimler<br><br>
-                        Profesyonel makine ve uzman ekibimizle <br>
-                        muayenehane, hastane, poliklinik ve <br>
-                        ameliyathane çekimleri yapıyor, <br>
-                        hastalarınızın sizi görmesini sağlıyoruz. <br> 
-                        Youtube kanalınıza yüklenmesi <br>
-                        işlemlerini yapıyoruz.  
-                    </p>
-                </div>
-            </div>
-        </section> -->
-
 @endsection

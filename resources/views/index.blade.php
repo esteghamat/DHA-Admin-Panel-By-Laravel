@@ -2,9 +2,6 @@
 
 @section('content')
 
-<?php
-// dd(Config::get('constants.frontend_address'));
-?>
         <header>
             <section class="header">
                 <div class="header-left"><img src="{{ asset(Config::get('constants.frontend_address').'/dha-images/3-03.png') }}" alt="">
@@ -25,7 +22,7 @@
                         ?>
                         <!-- <h2>DİJİTAL SAĞLIK AJANSI</h2> -->
                         <h2>
-                            {{ $contentheads_anasayfa->contenthead_title }}
+                            {{ isset($contentheads_anasayfa->contenthead_title) ? $contentheads_anasayfa->contenthead_title : '' }}
                         </h2>
                     </div>
                     <div>
@@ -42,7 +39,16 @@
                             Siz muayenenize devam edin gerisini biz hallederiz! </p> -->
                         <P class="fs-sm">
                           <?php 
-                             echo(nl2br($contentheads_anasayfa->contenthead_title_description));
+                             $anasayfa_contenthead_title_description = '';
+                             if(isset($contentheads_anasayfa->contenthead_title_description)) 
+                             {
+                              $anasayfa_contenthead_title_description = $contentheads_anasayfa->contenthead_title_description;
+                             }
+                             else
+                             {
+                              $anasayfa_contenthead_title_description = '';
+                             }
+                             echo(nl2br($anasayfa_contenthead_title_description));
                           ?>  
                         </P>    
                     </div>
@@ -56,7 +62,7 @@
                 <?php
                   $contentheads_biz_kimiz = $contentheads->filter(function($item)
                       {
-                          if($item->site_content_type->contenttype_slug == 'biz_kimiz')
+                          if($item->site_content_type->contenttype_slug == 'biz-kimiz')
                           {
                               return $item;
                           }
@@ -64,7 +70,7 @@
                   $contentheads_biz_kimiz = $contentheads_biz_kimiz->first();
                 ?>
                 <!-- <h1><span> Biz Kimiz?</span></h1> -->
-                <h1><span> {{ $contentheads_biz_kimiz->contenthead_title }}</span></h1>
+                <h1><span> {{ isset($contentheads_biz_kimiz->contenthead_title) ? $contentheads_biz_kimiz->contenthead_title : '' }}</span></h1>
                 <!-- <p>DHA, sadece sağlık sektörüne hizmet veren,
                     alanında uzman ekibiyle kurulan dijital sağlık ajansıdır.
                     Dijital pazarlama ve dijital repütasyonun öneminin
@@ -77,14 +83,25 @@
                     yaratıcı fikirler geliştirir. Siz dünyayı iyileştirmeye devam edin gerisini biz hallederiz! 
                 </p> -->
                 <p class="fs-sm">
-                  {{ $contentheads_biz_kimiz->contenthead_title_description }}
+                <?php  
+                  $biz_kimiz_contenthead_title_description = '';
+                  if(isset($contentheads_biz_kimiz->contenthead_title_description))
+                  {
+                    $biz_kimiz_contenthead_title_description = $contentheads_biz_kimiz->contenthead_title_description;
+                  }
+                  else
+                  {
+                    $biz_kimiz_contenthead_title_description = '';
+                  }
+                  echo(nl2br($biz_kimiz_contenthead_title_description));
+                ?>  
                 </p>
             </div>
             <div class="container2">
                 <?php
                 $contentitems_biz_kimiz = $contentitems->filter(function($item)
                     {
-                        if($item->site_content_type->contenttype_slug == 'biz_kimiz')
+                        if($item->site_content_type->contenttype_slug == 'biz-kimiz')
                         {
                             return $item;
                         }
@@ -95,7 +112,7 @@
                     <div><img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $contentitem->contentitem_logo_image_name	}}" alt=""></div>
                     <div>
                         <!-- <h1>DİJİTAL REKLAM YONETİMİ</h1> -->
-                        <h1>{{ $contentitem->	contentitem_title }}</h1>
+                        <h1>{{ isset($contentitem->	contentitem_title) ? $contentitem->	contentitem_title : '' }}</h1>
                     </div>
                     <div>
                         <!-- <p>Uzman grafiker ve editörlerimizle sosyal
@@ -103,7 +120,7 @@
                             uygun düzenliyor, büyütüyor ve raporluyoruz.
                         </p> -->
                         <p class="fs-sm">
-                            {{ $contentitem->contentitem_title_description }}
+                            {{ isset($contentitem->contentitem_title_description) ? $contentitem->contentitem_title_description : '' }}
                         </p>
                     </div>
                 </div>
@@ -162,7 +179,7 @@
                       $contentheads_islerimiz = $contentheads_islerimiz->first();
                     ?>
                     <!-- <h1><span>İşlerimiz</span></h1> -->
-                    <h1><span> {{ $contentheads_islerimiz->contenthead_title }}</span></h1>
+                    <h1><span> {{ isset($contentheads_islerimiz->contenthead_title) ? $contentheads_islerimiz->contenthead_title : '' }}</span></h1>
                 </div>
                 <div>
                     <!-- <p>Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam pariatur
@@ -171,7 +188,16 @@
                     </p> -->
                     <p class="fs-sm">
                       <?php 
-                      echo(nl2br($contentheads_islerimiz->contenthead_title_description));
+                        $islerimiz_contenthead_title_description = '';
+                        if(isset($contentheads_islerimiz->contenthead_title_description))
+                        {
+                          $islerimiz_contenthead_title_description = $contentheads_islerimiz->contenthead_title_description;
+                        }
+                        else
+                        {
+                          $islerimiz_contenthead_title_description = '';
+                        }
+                        echo(nl2br($islerimiz_contenthead_title_description));
                       ?>  
                     </p>
                 </div>
@@ -221,7 +247,7 @@
                 $i=1;
                 ?>
                 @foreach($contentitems_islerimiz as $iş)
-                  <div class="grid-item item{{ $i }} all {{ $iş->filter->filter_slug }}">
+                  <div class="grid-item item{{ $i }} all {{ isset($iş->filter->filter_slug) ? $iş->filter->filter_slug : '' }}">
                     <img src="{{ URL::to('/') }}/{{Config::get('constants.backend_address')}}/uploaded_files/images/{{ $iş->contentitem_image_name	}}" alt="">
                   </div>
                   <?php $i=$i+1; ?>
@@ -258,12 +284,21 @@
                   $contentheads_recetemiz = $contentheads_recetemiz->first();
                 ?>
                 <div>
-                    <h1><span> {{ $contentheads_recetemiz->contenthead_title }} </span></h1>
+                    <h1><span> {{ isset($contentheads_recetemiz->contenthead_title) ? $contentheads_recetemiz->contenthead_title : '' }} </span></h1>
                 </div>
                 <div>
                 <p>
                   <?php 
-                  echo(nl2br($contentheads_recetemiz->contenthead_title_description));
+                  $recetemiz_contenthead_title_description = '';
+                  if(isset($contentheads_recetemiz->contenthead_title_description))
+                  {
+                    $recetemiz_contenthead_title_description = $contentheads_recetemiz->contenthead_title_description;
+                  }
+                  else
+                  {
+                    $recetemiz_contenthead_title_description = '';
+                  }                    
+                  echo(nl2br($recetemiz_contenthead_title_description));
                   ?>  
                   <img src="{{ asset(Config::get('constants.frontend_address').'/dha-images/Vector Smart Object3.png') }}" alt="">
                 </p>
@@ -284,12 +319,21 @@
                     <div class="swiper-slide">
                         <span>
                             <div>
-                                <h4>{{ $contentitem->contentitem_title }}</h4>
+                                <h4>{{ isset($contentitem->contentitem_title) ? $contentitem->contentitem_title : '' }}</h4>
                             </div>
                             <div>
                                   <h5>
                                     <?php 
-                                      echo(nl2br($contentitem->contentitem_title_description));
+                                      $contentitem_title_description = '';
+                                      if(isset($contentitem->contentitem_title_description))
+                                      {
+                                        $contentitem_title_description = $contentitem->contentitem_title_description;
+                                      }
+                                      else
+                                      {
+                                        $contentitem_title_description = '';
+                                      }
+                                      echo(nl2br($contentitem_title_description));
                                     ?>  
                                   </h5>  
                             </div>
@@ -297,7 +341,16 @@
                             <div>
                                 <p>
                                   <?php 
-                                      echo(nl2br($contentitem->contentitem_description));
+                                      $contentitem_description = '';
+                                      if(isset($contentitem->contentitem_description))
+                                      {
+                                        $contentitem_description = $contentitem->contentitem_description;
+                                      }
+                                      else
+                                      {
+                                        $contentitem_description = '';
+                                      }
+                                      echo(nl2br($contentitem_description));
                                     ?>  
                                 </p>
                             </div>
@@ -480,14 +533,14 @@
                 <?php
                   $contentheads_referanslar = $contentheads->filter(function($item)
                   {
-                          if($item->site_content_type->contenttype_slug == 'referenslar')
+                          if($item->site_content_type->contenttype_slug == 'referanslar')
                           {
                               return $item;
                           }
                   });
                   $contentheads_referanslar = $contentheads_referanslar->first();
                 ?>
-                <h1><span>{{ $contentheads_referanslar->contenthead_title }}</span></h1>
+                <h1><span>{{ isset($contentheads_referanslar->contenthead_title) ? $contentheads_referanslar->contenthead_title : '' }}</span></h1>
             </div>
             <div class="ref-slider">
                 <!-- Additional required wrapper -->
@@ -496,7 +549,7 @@
                     <?php
                         $contentheads_referanslar = $contentitems->filter(function($item)
                             {
-                                if($item->site_content_type->contenttype_slug == 'referenslar')
+                                if($item->site_content_type->contenttype_slug == 'referanslar')
                                 {
                                     return $item;
                                 }

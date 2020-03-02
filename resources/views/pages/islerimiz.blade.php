@@ -38,7 +38,7 @@
         <div class="work-sample-2">
         @foreach($contentitems as $contentitem)
             <?php
-                $filter = isset($contentitem->filter->filter_name) ? $contentitem->filter->filter_name : '';
+                $filter = isset($contentitem->filter->filter_slug) ? $contentitem->filter->filter_slug : '';
                 // echo('<br>');
                 // echo("grid-list all2 " . $filter );
             ?>

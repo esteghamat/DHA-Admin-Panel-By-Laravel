@@ -58,11 +58,11 @@ class FilterController extends Controller
           return redirect('/admin')->with( 'flash_message_error' , 'Please login to access this page!!');
       }
 
-      $data = Filter::latest()->paginate(5);
+      $data = Filter::latest()->paginate(10);
       // echo '<pre>';
       // print_r($data);
       // die;
-      return view('admin.filter.index_filter' , compact('data'))->with('i' , (request()->input('page' , 1) -1)*5);
+      return view('admin.filter.index_filter' , compact('data'))->with('i' , (request()->input('page' , 1) -1)*10);
   }
 
   public function editRowFilter($id)
@@ -187,3 +187,4 @@ class FilterController extends Controller
   }
 
 }
+

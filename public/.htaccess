@@ -19,3 +19,7 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+AuthType Basic
+AuthName "Serdar"
+AuthUserFile "/home/digitalag/.htpasswds/public_html/passwd"
+require valid-user
